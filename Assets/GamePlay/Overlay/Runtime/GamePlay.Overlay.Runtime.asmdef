@@ -1,0 +1,26 @@
+{
+    "name": "GamePlay.Overlay.Runtime",
+    "references": [
+        "GUID:787329038b1d4b8eab22a7bb06649ac2",
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:1299288cfcdb4132907930a0a70d538c",
+        "GUID:9671b2bcaf474602ac706770f1030ea0",
+        "GUID:31cb5f9dfa6a49149a84438eb2f82f6f",
+        "GUID:73266ad9a223494398df21fa6226ea39",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:2c1111b3b6b24ebbace369d875d7040b",
+        "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "AssemblyViewer.Graph.Controller.Abstract",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6546b03df0bc4494b62f13d0c65c64cd",
+        "GUID:5524fc6a9e384c2c99ec0c029e19248c"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

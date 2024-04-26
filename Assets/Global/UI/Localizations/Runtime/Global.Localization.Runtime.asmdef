@@ -1,0 +1,22 @@
+{
+    "name": "Global.Localization.Runtime",
+    "references": [
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:47e2b2c4c0324851bf56e17d40c123f4",
+        "GUID:7347c5f7bb3f4b8b84942d18625079ec",
+        "GUID:e3f90ec7da70443198fdd279336fd055",
+        "GUID:25f79b9f7aeb42a8af7eb332b6a4ba79",
+        "GUID:ac84fa5698134749b8ca9ae45e3eab59",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Global.Camera.Utils.Runtime",
+    "references": [
+        "GUID:31cb5f9dfa6a49149a84438eb2f82f6f",
+        "GUID:6cbe179bbc4c47d48bb425683255659a",
+        "GUID:ca913105e6424d24af37fc9ba8269837",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

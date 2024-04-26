@@ -1,0 +1,18 @@
+﻿{
+  "name": "Loop.Runtime",
+  "references": [
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+    "GUID:1429db28f9474a389cb34ec712b3c8b3",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:2c1111b3b6b24ebbace369d875d7040b",
+    "GUID:66eb364df0324cccb8058447cb8483d9",
+    "GUID:abbe6b138ff34ac08015f452737e057c",
+    "GUID:dccbaf0348504c30995193bc2d0a1498",
+    "GUID:44cdab30c5e0420cbf6d4050d9a9ed31",
+    "GUID:3b992c16a4c84e929d722c6b7d0ed004",
+    "GUID:10fe20dd1bd946259b6ea4fd3965b06e",
+    "GUID:25f79b9f7aeb42a8af7eb332b6a4ba79",
+    "GUID:e473f896c53940b9bf941b047b8c3b50"
+  ]
+}

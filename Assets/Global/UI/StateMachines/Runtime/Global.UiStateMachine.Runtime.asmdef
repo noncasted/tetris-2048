@@ -1,0 +1,21 @@
+{
+    "name": "Global.UiStateMachine.Runtime",
+    "references": [
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:4e18616727bd4b79a3b107e0489cec76",
+        "GUID:265d18ef1d894d07ac9f0331e8ac2297",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:dccbaf0348504c30995193bc2d0a1498",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

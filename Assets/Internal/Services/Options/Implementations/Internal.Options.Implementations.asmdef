@@ -1,0 +1,15 @@
+{
+    "name": "Internal.Options.Implementations",
+    "references": [
+        "GUID:1429db28f9474a389cb34ec712b3c8b3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

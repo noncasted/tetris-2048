@@ -1,0 +1,16 @@
+{
+    "name": "Menu.Main.Abstract",
+    "rootNamespace": "",
+    "references": [
+        "GUID:265d18ef1d894d07ac9f0331e8ac2297"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

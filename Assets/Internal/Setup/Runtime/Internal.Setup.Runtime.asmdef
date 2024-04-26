@@ -1,0 +1,23 @@
+{
+    "name": "Internal.Setup.Runtime",
+    "references": [
+        "GUID:1af919ad20217be41b61d5c0bb458967",
+        "GUID:fe4adae493555af4788e53948d7966ca",
+        "GUID:2ef144f1edca7a1438d7ed500325c442",
+        "GUID:e56bdfe1a348957498e17c00f7773b6e",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:dccbaf0348504c30995193bc2d0a1498",
+        "GUID:b2b063a02a4bdd147955e91fc459daeb",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+{
+    "name": "GamePlay.Save.Abstract",
+    "references": [
+        "GUID:25f79b9f7aeb42a8af7eb332b6a4ba79"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

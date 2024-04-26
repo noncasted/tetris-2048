@@ -1,0 +1,20 @@
+{
+    "name": "Global.UI.Design.Runtime",
+    "references": [
+        "GUID:787329038b1d4b8eab22a7bb06649ac2",
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:4620af72014241938d50c24161c76cdc",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:dccbaf0348504c30995193bc2d0a1498",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

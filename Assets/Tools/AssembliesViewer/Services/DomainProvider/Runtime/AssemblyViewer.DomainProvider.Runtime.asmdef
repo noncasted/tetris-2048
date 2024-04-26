@@ -1,0 +1,21 @@
+{
+    "name": "AssemblyViewer.DomainProvider.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c5dfd75a2d7d4b13b3639390fa381398",
+        "GUID:6546b03df0bc4494b62f13d0c65c64cd",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:d6c584f30cf14354b8da1dd396ae4619"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Global.Input.View.Runtime",
+    "references": [
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:c766a58c8dd048cc8fa5205376f337b4",
+        "GUID:10fe20dd1bd946259b6ea4fd3965b06e",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:dccbaf0348504c30995193bc2d0a1498",
+        "GUID:688cfbbe2a536604ab4aa06ececa1da3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

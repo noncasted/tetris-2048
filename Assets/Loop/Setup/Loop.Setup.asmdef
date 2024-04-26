@@ -1,0 +1,13 @@
+﻿{
+  "name": "Loop.Setup",
+  "references": [
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+    "GUID:1429db28f9474a389cb34ec712b3c8b3",
+    "GUID:7d00499fa3c84923ae3dfbd0c1484802",
+    "GUID:2f93dd22229e439da527d6bf72a598a9",
+    "GUID:63ba0271dc234592954c2895eb937ba2",
+    "GUID:36b63739de284ea9aded3ca311c0ede1",
+    "GUID:3f296c843c6043b28927a4646dd4460f"
+  ]
+}

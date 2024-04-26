@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a67da62cd4d42eb8059aa81339b6645, type: 3}
+  m_Name: GlobalService_InputView
+  m_EditorClassIdentifier: 
+  _leanTouch: {fileID: 4990109931066719739, guid: 56d86e1d27fda7745b511e1ee108c177, type: 3}

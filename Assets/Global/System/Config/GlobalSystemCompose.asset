@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0483045a8cc47edb1f58043ad850f95, type: 3}
+  m_Name: GlobalSystemCompose
+  m_EditorClassIdentifier: 
+  _scopeDisposer: {fileID: 11400000, guid: 5d5d34fb2bc5e654ab9562f3bb1cd75f, type: 2}
+  _applicationProxy: {fileID: 11400000, guid: f8225ff56a4a96a4e80b0602b4cd3656, type: 2}
+  _messageBroker: {fileID: 11400000, guid: 07dfa12cb179a93488ef8a94dd145d98, type: 2}
+  _resourcesCleaner: {fileID: 11400000, guid: f475d7d9f2c92ec479a665c9ac905fbc, type: 2}
+  _updater: {fileID: 11400000, guid: 949a43ee6c5ebd44fb23e1cc06711427, type: 2}
+  _animatorsUpdater: {fileID: 11400000, guid: 1befadf89c3618649840fc80766674c0, type: 2}
+  _entityCreator: {fileID: 11400000, guid: a5c463909bd25bb428685f95eb6726ce, type: 2}

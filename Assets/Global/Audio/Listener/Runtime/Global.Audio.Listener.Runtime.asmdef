@@ -1,0 +1,17 @@
+{
+    "name": "Global.Audio.Listener.Runtime",
+    "references": [
+        "GUID:2255da969b824283ac428cef5d9a92c3",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

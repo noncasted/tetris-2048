@@ -1,0 +1,27 @@
+{
+    "name": "AssemblyViewer.Graph.Tree",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:552447fb6cdb3d34b969d73c1b33b7d8",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:6546b03df0bc4494b62f13d0c65c64cd",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:206bc4df393e4554ac3cfe25af5616d1",
+        "GUID:885cf2346e5a480cb951cfc4e4bd9599",
+        "GUID:d3646cb6c22de2d4e9ab342c87024f8e",
+        "GUID:60407c6273754e75b1f510fa25612c55",
+        "GUID:a8f6b895322c45408ed64cb258c91d51"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

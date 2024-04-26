@@ -1,0 +1,16 @@
+﻿{
+  "name": "Menu.GameEnd.Runtime",
+  "references": [
+    "GUID:922088ff109f4442bd95aecf9e01f915",
+    "GUID:6055be8ebefd69e48b49212b09b47b2f",
+    "GUID:265d18ef1d894d07ac9f0331e8ac2297",
+    "GUID:3165858da54f4f7eb965695cee94ecc6",
+    "GUID:9dbe345fbe8e47cb8a0d24c890f0feff",
+    "GUID:73266ad9a223494398df21fa6226ea39",
+    "GUID:1429db28f9474a389cb34ec712b3c8b3",
+    "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:4ea122410de743aa854f446e89e442a5",
+    "GUID:4e18616727bd4b79a3b107e0489cec76"
+  ]
+}

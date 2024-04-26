@@ -1,0 +1,20 @@
+{
+    "name": "GamePlay.Save.Runtime",
+    "references": [
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:44cdab30c5e0420cbf6d4050d9a9ed31",
+        "GUID:9671b2bcaf474602ac706770f1030ea0",
+        "GUID:25f79b9f7aeb42a8af7eb332b6a4ba79",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Global.Setup.Scope",
+    "references": [
+        "GUID:458db4a8596d482fa5af2d9c9b06c84f",
+        "GUID:46cc9af54bcc41bdbd43ad401db2ff39",
+        "GUID:89f296d0dfcf4d779bae2a0d35d08404",
+        "GUID:2eb6015b05e4434682eb33f651b40e40",
+        "GUID:ca913105e6424d24af37fc9ba8269837",
+        "GUID:527a9530d379bfe418c77826f7dc6efb",
+        "GUID:c1199b135ecc432fafdd7012a4df65be",
+        "GUID:a7b0ea7ebc8268a4aaa3c8f44a6e2981",
+        "GUID:dfbb6e0156014dcf90269c8b465f0c20",
+        "GUID:2014bf05b5754530944e2b2c13ed9b9d",
+        "GUID:557911ebb89c48bd8cbab1eba23eaf42",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:36b63739de284ea9aded3ca311c0ede1",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

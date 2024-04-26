@@ -1,0 +1,19 @@
+{
+    "name": "Global.Audio.Player.Runtime",
+    "references": [
+        "GUID:cd50199a6a164b788188f55241809f95",
+        "GUID:25f79b9f7aeb42a8af7eb332b6a4ba79",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

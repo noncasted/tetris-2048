@@ -1,0 +1,23 @@
+{
+    "name": "AssemblyViewer.Graph.Nodes.Runtime.asmdef",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6546b03df0bc4494b62f13d0c65c64cd",
+        "GUID:5524fc6a9e384c2c99ec0c029e19248c",
+        "GUID:552447fb6cdb3d34b969d73c1b33b7d8",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:206bc4df393e4554ac3cfe25af5616d1",
+        "GUID:885cf2346e5a480cb951cfc4e4bd9599"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

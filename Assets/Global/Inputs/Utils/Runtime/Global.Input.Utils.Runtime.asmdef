@@ -1,0 +1,20 @@
+{
+    "name": "Global.Input.Utils.Runtime",
+    "references": [
+        "GUID:6cbe179bbc4c47d48bb425683255659a",
+        "GUID:ca913105e6424d24af37fc9ba8269837",
+        "GUID:790a3b5bc4214af3948063a02232f1bc",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

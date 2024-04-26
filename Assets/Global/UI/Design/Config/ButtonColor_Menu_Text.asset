@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3d943d71f14ccbaf20d61d6dedfb5b, type: 3}
+  m_Name: ButtonColor_Menu_Text
+  m_EditorClassIdentifier: 
+  _idle: {r: 0.30817598, g: 0.14245868, b: 0.25794294, a: 1}
+  _hovered: {r: 0.20754719, g: 0.08941497, b: 0.17183279, a: 1}
+  _pressed: {r: 0.11320752, g: 0.043787804, b: 0.09238159, a: 1}
+  _transitionTime: 0.1

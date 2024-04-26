@@ -1,0 +1,19 @@
+{
+    "name": "GamePlay.BlockSpawner.Runtime",
+    "references": [
+        "GUID:2f8eca8d422644a591be950bac2d09fc",
+        "GUID:b688776136e2474fa71e09d9ad980c75",
+        "GUID:10fe20dd1bd946259b6ea4fd3965b06e",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

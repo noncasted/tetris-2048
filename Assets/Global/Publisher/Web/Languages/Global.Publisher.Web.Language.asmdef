@@ -1,0 +1,16 @@
+{
+    "name": "Global.Publisher.Web.Language",
+    "references": [
+        "GUID:7347c5f7bb3f4b8b84942d18625079ec",
+        "GUID:ac84fa5698134749b8ca9ae45e3eab59"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": true
+}

@@ -1,0 +1,21 @@
+{
+    "name": "GamePlay.Input.Runtime",
+    "references": [
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:e473f896c53940b9bf941b047b8c3b50",
+        "GUID:4e18616727bd4b79a3b107e0489cec76",
+        "GUID:c766a58c8dd048cc8fa5205376f337b4",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:688cfbbe2a536604ab4aa06ececa1da3",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

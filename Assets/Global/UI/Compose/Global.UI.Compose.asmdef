@@ -1,0 +1,20 @@
+{
+    "name": "Global.UI.Compose",
+    "references": [
+        "GUID:831051450570446b80b02184e132e3d2",
+        "GUID:9a34842b183a1fb4797341ba693aa70c",
+        "GUID:5423649eb0b944b2bd9c4b76a724721c",
+        "GUID:c0a9cc90bab84c6595014a6d8aef0d8a",
+        "GUID:3165858da54f4f7eb965695cee94ecc6",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

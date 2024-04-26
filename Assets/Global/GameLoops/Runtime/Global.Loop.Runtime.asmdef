@@ -1,0 +1,23 @@
+{
+    "name": "Global.Loop.Runtime",
+    "references": [
+        "GUID:31cb5f9dfa6a49149a84438eb2f82f6f",
+        "GUID:16fecd736171436a9394a5637791f6a0",
+        "GUID:de7059d40fcb45c5a07d18951d4e1554",
+        "GUID:07a044aa3db84ac78852c3db5b8a723e",
+        "GUID:602d0fa4332f43cbb95f19a1d3d74894",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:2261e6f66ecc4617b1012c84d3b57e81",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

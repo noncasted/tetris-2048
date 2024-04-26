@@ -1,0 +1,19 @@
+{
+    "name": "Global.System.Compose",
+    "references": [
+        "GUID:178055f3614f64e4ca81c660fc790270",
+        "GUID:9b51a48d04164033bd0ea196e24c1113",
+        "GUID:bcac54c0a21022a4e90412040f27790e",
+        "GUID:73b302327fdb4e56b354edfbfd3a4663",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

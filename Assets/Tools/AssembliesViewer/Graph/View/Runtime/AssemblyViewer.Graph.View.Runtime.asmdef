@@ -1,0 +1,19 @@
+{
+    "name": "AssemblyViewer.Graph.View.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:103663396c904ad2a916473bae259fd4",
+        "GUID:552447fb6cdb3d34b969d73c1b33b7d8"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

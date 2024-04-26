@@ -1,0 +1,14 @@
+{
+    "name": "Global.Audio.Listener.Abstract",
+    "references": [
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": true
+}

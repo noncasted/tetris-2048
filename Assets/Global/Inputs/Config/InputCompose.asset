@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4e1f325309483fa8825d782dcf9dae, type: 3}
+  m_Name: InputCompose
+  m_EditorClassIdentifier: 
+  _constraints: {fileID: 11400000, guid: f4f52ff746d55554ba2678213210d72c, type: 2}
+  _utils: {fileID: 11400000, guid: dc72bccee8c1f6f45a653348ec793f4e, type: 2}
+  _view: {fileID: 11400000, guid: 59f0f3c41ac20364ba23a15c6eeeb5d1, type: 2}

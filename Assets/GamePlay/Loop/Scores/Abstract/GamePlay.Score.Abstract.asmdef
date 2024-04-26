@@ -1,0 +1,15 @@
+{
+    "name": "GamePlay.Score.Abstract",
+    "references": [
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

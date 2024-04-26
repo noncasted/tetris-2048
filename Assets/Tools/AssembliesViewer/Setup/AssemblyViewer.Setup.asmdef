@@ -1,0 +1,32 @@
+{
+    "name": "AssemblyViewer.Setup",
+    "rootNamespace": "",
+    "references": [
+        "GUID:51481429a34a4e32ba1e7eab23368623",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:c5dfd75a2d7d4b13b3639390fa381398",
+        "GUID:a364375c6ab1492388dcdec2880c134f",
+        "GUID:6546b03df0bc4494b62f13d0c65c64cd",
+        "GUID:9f12b849425b4eee835913da917e6c20",
+        "GUID:9c2b347ee9a64e1aa25d026288cbd7bb",
+        "GUID:103663396c904ad2a916473bae259fd4",
+        "GUID:ac18544d4fc44de69198ae1559677b88",
+        "GUID:36b63739de284ea9aded3ca311c0ede1",
+        "GUID:885cf2346e5a480cb951cfc4e4bd9599",
+        "GUID:c07378d5d7eb42f39f0f2d103379de16",
+        "GUID:b6506c5e27354bbd9a7bdde5aec7ceec"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Internal.Scenes.Common",
+    "references": [
+        "GUID:1af919ad20217be41b61d5c0bb458967"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": true
+}

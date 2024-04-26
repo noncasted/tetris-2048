@@ -1,0 +1,38 @@
+{
+    "name": "AssemblyViewer.Graph.Controller.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:10fe20dd1bd946259b6ea4fd3965b06e",
+        "GUID:c766a58c8dd048cc8fa5205376f337b4",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:103663396c904ad2a916473bae259fd4",
+        "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
+        "GUID:60407c6273754e75b1f510fa25612c55",
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:5524fc6a9e384c2c99ec0c029e19248c",
+        "GUID:6546b03df0bc4494b62f13d0c65c64cd",
+        "GUID:a8f6b895322c45408ed64cb258c91d51",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:885cf2346e5a480cb951cfc4e4bd9599",
+        "GUID:c5dfd75a2d7d4b13b3639390fa381398",
+        "GUID:e43d3b8e02a540338d99f958aba26203",
+        "GUID:552447fb6cdb3d34b969d73c1b33b7d8",
+        "GUID:7418f28e8dc14d03a2a044ff51de6b66",
+        "GUID:e8eac2a1d9ce4767b025b4b6acc2ba32",
+        "GUID:ca913105e6424d24af37fc9ba8269837",
+        "GUID:de4e6084e6d474788bb8c799d6b461ec",
+        "GUID:c07378d5d7eb42f39f0f2d103379de16"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

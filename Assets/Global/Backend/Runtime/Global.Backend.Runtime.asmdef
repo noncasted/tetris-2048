@@ -1,0 +1,18 @@
+{
+    "name": "Global.Backend.Runtime",
+    "references": [
+        "GUID:2f9ccc4c2f934f40933102113f0e34cd",
+        "GUID:849df766959e4a8fb4a3b6044f324f7c",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Global.Updater.Progressions",
+    "references": [
+        "GUID:10fe20dd1bd946259b6ea4fd3965b06e",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

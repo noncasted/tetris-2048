@@ -1,0 +1,20 @@
+{
+    "name": "Global.Updater.Setup",
+    "references": [
+        "GUID:10fe20dd1bd946259b6ea4fd3965b06e",
+        "GUID:b0a02ee4c56948508f9587983a10b708",
+        "GUID:5cdb765c2b75472f9a0ef45165f460b9",
+        "GUID:04243451437dcfe48b583ab43ef0a8fa",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

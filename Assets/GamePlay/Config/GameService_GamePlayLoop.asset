@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29b5001259d4d0f9e667033f63812be, type: 3}
+  m_Name: GameService_GamePlayLoop
+  m_EditorClassIdentifier: 
+  _scene: {fileID: 11400000, guid: 2c764f46046a16b4e9d84f188e1ee40b, type: 2}
+  _blockFactoryConfig: {fileID: 11400000, guid: 50d3e03c2629d8747b14065f94d0f6c0, type: 2}
+  _blockSpawnerConfig: {fileID: 11400000, guid: b9e7514ac8ccf9a4d9cf82f2180e9551, type: 2}
+  _blockColors: {fileID: 11400000, guid: 515f8e06106276b468165520b4d8aad4, type: 2}
+  _speedConfig: {fileID: 11400000, guid: 3317e90b712cfe94d92dc4fe3eefcd60, type: 2}

@@ -1,0 +1,18 @@
+{
+    "name": "Global.Input.Constraints.Editor",
+    "references": [
+        "GUID:bfe27ceb2dfd4e159b3a9763c217114f",
+        "GUID:4e18616727bd4b79a3b107e0489cec76"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "precompiledReferences": [],
+    "defineConstraints": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "noEngineReferences": false
+}

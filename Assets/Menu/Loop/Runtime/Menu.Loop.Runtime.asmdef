@@ -1,0 +1,32 @@
+{
+    "name": "Menu.Loop.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:abbe6b138ff34ac08015f452737e057c",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:1299288cfcdb4132907930a0a70d538c",
+        "GUID:922088ff109f4442bd95aecf9e01f915",
+        "GUID:265d18ef1d894d07ac9f0331e8ac2297",
+        "GUID:b6b9c5925778498a8b3317adc8b60063",
+        "GUID:2c1111b3b6b24ebbace369d875d7040b",
+        "GUID:85d50943df55413bbab40ca6dc603018",
+        "GUID:73266ad9a223494398df21fa6226ea39",
+        "GUID:787329038b1d4b8eab22a7bb06649ac2",
+        "GUID:e2c94f41e49546dabfa15ddfbc2272ce",
+        "GUID:b0ad597a06d640529cae5f76607ea013",
+        "GUID:4a9ba28c6d164cdfa216e6c89f8f35ae",
+        "GUID:f167b0f1ede84c779a97757ae1f7a074",
+        "GUID:1b27dc8e18dd40d1a181e966ba5a1ffe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
