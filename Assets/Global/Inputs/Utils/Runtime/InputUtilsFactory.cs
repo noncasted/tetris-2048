@@ -12,13 +12,15 @@ namespace Global.Inputs.Utils.Runtime
     [InlineEditor]
     public class InputUtilsFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<InputConversion>()
                 .As<IInputConversion>();
 
             services.Register<InputProjection>()
                 .As<IInputProjection>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Global.Publisher.Web.Bootstrap
     {
         [SerializeField] private WebCallbacks _callbacksPrefab;
 
-        public override async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public override UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var options = utils.Options.GetOptions<PlatformOptions>();
 
@@ -52,6 +52,7 @@ namespace Global.Publisher.Web.Bootstrap
                 services.Register<WebLanguageExternAPI>()
                     .As<IWebLanguageAPI>();
             }
+            return UniTask.CompletedTask;
         }
 
         private IReadOnlyList<IStorageEntrySerializer> GetSaves()

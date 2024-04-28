@@ -23,16 +23,20 @@ namespace Menu.Loop.Runtime
         protected override void CollectServices(IServiceCollection services)
         {
             services.RegisterComponent(_settings)
-                .As<IMenuSettings>();
+                .As<IMenuSettings>()
+                .AsCallbackListener();
 
             services.RegisterComponent(_about)
-                .As<IMenuAbout>();
+                .As<IMenuAbout>()
+                .AsCallbackListener();
 
             services.RegisterComponent(_gameEnd)
-                .As<IMenuGameEnd>();
+                .As<IMenuGameEnd>()
+                .AsCallbackListener();
 
             services.RegisterComponent(_navigation)
-                .As<IMenuNavigation>();
+                .As<IMenuNavigation>()
+                .AsCallbackListener();
         }
     }
 }

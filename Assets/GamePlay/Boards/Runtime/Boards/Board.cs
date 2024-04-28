@@ -139,7 +139,6 @@ namespace GamePlay.Boards.Runtime.Boards
             if (_scanner.IsMovePossible() == true)
                 return;
 
-            Debug.Log("Lose");
             _completion.TrySetResult(new BoardResult());
 
             return;

@@ -14,7 +14,7 @@ namespace Global.Inputs.View.Runtime
     {
         [SerializeField] private LeanTouch _leanTouch;
         
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var leanTouch = Instantiate(_leanTouch);
             leanTouch.name = "LeanTouch";
@@ -39,6 +39,8 @@ namespace Global.Inputs.View.Runtime
             services.Register<InputActions>()
                 .As<IInputActions>()
                 .AsCallbackListener();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

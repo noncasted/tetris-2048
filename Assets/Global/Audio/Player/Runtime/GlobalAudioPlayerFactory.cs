@@ -12,16 +12,19 @@ namespace Global.Audio.Player.Runtime
     {
         [SerializeField] private GlobalAudioPlayer _prefab;
 
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var player = Instantiate(_prefab);
             player.name = "AudioPlayer";
 
             services.RegisterComponent(player)
                 .As<IGlobalVolume>()
+                .As<IGlobalAudioPlayer>()
                 .AsCallbackListener();
 
             utils.Binder.MoveToModules(player.gameObject);
+            
+            return UniTask.CompletedTask;
         }
     }
 }

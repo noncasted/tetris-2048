@@ -12,7 +12,7 @@ namespace Global.Cameras.Persistent.Runtime
     {
         [SerializeField] private GlobalCamera _prefab;
 
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var globalCamera = Instantiate(_prefab, new Vector3(0f, 0f, -10f), Quaternion.identity);
             globalCamera.name = "Camera_Global";
@@ -23,6 +23,8 @@ namespace Global.Cameras.Persistent.Runtime
                 .AsCallbackListener();
 
             utils.Binder.MoveToModules(globalCamera);
+            
+            return UniTask.CompletedTask;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Global.UI.Localizations.Runtime
     {
         [SerializeField] private LocalizationStorage _storage;
 
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<Localization>()
                 .WithParameter<ILocalizationStorage>(_storage)
@@ -21,6 +21,8 @@ namespace Global.UI.Localizations.Runtime
 
             services.Register<LanguageConverter>()
                 .As<ILanguageConverter>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

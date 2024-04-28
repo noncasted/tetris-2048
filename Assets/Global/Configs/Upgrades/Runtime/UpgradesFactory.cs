@@ -10,11 +10,13 @@ namespace Global.Configs.Upgrades.Runtime
     [InlineEditor]
     public class UpgradesFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<Upgrades>()
                 .As<IUpgrades>()
                 .AsCallbackListener();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

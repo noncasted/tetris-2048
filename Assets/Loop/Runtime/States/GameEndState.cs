@@ -5,6 +5,7 @@ using Internal.Scopes.Abstract.Lifetimes;
 using Loop.Abstract;
 using Menu.GameEnds.Abstract;
 using Menu.Loop.Abstract;
+using UnityEngine;
 
 namespace Loop.Runtime.States
 {
@@ -34,7 +35,7 @@ namespace Loop.Runtime.States
 
             var handle = _stateMachine.EnterAsChild(_main, _gameEnd);
             _gameEnd.Show(handle, _score.Current.Value);
-            
+
             _gameEnd.ExitRequested.Listen(stateLifetime, () =>
             {
                 handle.Exit();

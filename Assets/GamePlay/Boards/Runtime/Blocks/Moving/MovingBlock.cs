@@ -7,6 +7,7 @@ using GamePlay.Boards.Abstract.Moves;
 using GamePlay.Boards.Runtime.Blocks.Moving.Actions;
 using Global.System.Updaters.Progressions;
 using Internal.Scopes.Abstract.Lifetimes;
+using Loop.Sounds.Abstract;
 using UnityEngine;
 
 namespace GamePlay.Boards.Runtime.Blocks.Moving
@@ -24,12 +25,14 @@ namespace GamePlay.Boards.Runtime.Blocks.Moving
         private IBoardScanner _scanner;
         private IMovingBlockAction _currentAction;
         private IProgressionHandle _progressionHandle;
+        private IGameSounds _sounds;
 
         public MovingBlockValue Value => _value;
         public IBoardTile Tile => _currentTile;
         public IReadOnlyLifetime Lifetime => _lifetime;
 
         public void Construct(
+            IGameSounds sounds,
             IProgressionFactory progressionFactory,
             IReadOnlyLifetime lifetime,
             IBoardView view,
@@ -38,6 +41,7 @@ namespace GamePlay.Boards.Runtime.Blocks.Moving
             int value,
             IBoardTile tile)
         {
+            _sounds = sounds;
             _scanner = scanner;
             _blockFactory = blockFactory;
             _lifetime = lifetime.CreateChild();
@@ -154,6 +158,7 @@ namespace GamePlay.Boards.Runtime.Blocks.Moving
 
             MovingBlockUpgradeAction CreateUpgrade()
             {
+                _sounds.PlayBlockCombine();
                 var options = new MovingBlockMoveOptions(_currentTile, targetTile, this, _transform, _config);
                 return new MovingBlockUpgradeAction(_lifetime, _progressionHandle, this, options);
             }

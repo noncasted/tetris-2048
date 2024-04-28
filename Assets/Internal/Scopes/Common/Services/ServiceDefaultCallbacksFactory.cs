@@ -10,10 +10,12 @@ namespace Internal.Scopes.Common.Services
     [CreateAssetMenu(fileName = "DefaultCallbacks", menuName = ScopesRoutes.Root + "DefaultCallbacks")]
     public class ServiceDefaultCallbacksFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var callbacks = new ServiceDefaultCallbacksRegister();
             callbacks.AddCallbacks(utils.Callbacks, utils.Data);
+            
+            return UniTask.CompletedTask;
         }
     }
 }

@@ -10,11 +10,12 @@ namespace Global.Inputs.Constraints.Runtime
     [InlineEditor]
     public class InputConstraintsFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<InputConstraintsStorage>()
                 .As<IInputConstraintsStorage>()
                 .AsCallbackListener();
+            return UniTask.CompletedTask;
         }
     }
 }

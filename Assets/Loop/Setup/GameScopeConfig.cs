@@ -7,6 +7,7 @@ using Internal.Scopes.Abstract.Instances.Services;
 using Internal.Scopes.Abstract.Scenes;
 using Internal.Scopes.Common.Services;
 using Loop.Runtime;
+using Loop.Sounds.Runtime;
 using Menu.Loop.Runtime;
 using Sirenix.OdinInspector;
 using Tutorial.Runtime;
@@ -24,6 +25,7 @@ namespace Loop.Setup
         [SerializeField] [CreateSO] private MenuLoopFactory _menuLoop;
         [SerializeField] [CreateSO] private OverlayFactory _overlay;
         [SerializeField] [CreateSO] private TutorialFactory _tutorial;
+        [SerializeField] [CreateSO] private GameSoundsFactory _sounds;
         
         [SerializeField] private ServiceDefaultCallbacksFactory _serviceDefaultCallbacks;
 
@@ -42,6 +44,7 @@ namespace Loop.Setup
             _menuLoop,
             _overlay,
             _tutorial,
+            _sounds,
             _serviceDefaultCallbacks
         };
 

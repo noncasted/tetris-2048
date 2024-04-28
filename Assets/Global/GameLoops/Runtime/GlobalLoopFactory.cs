@@ -12,16 +12,18 @@ namespace Global.GameLoops.Runtime
     {
         [SerializeField] private GameScopeConfig _gameScope;
 
-        public virtual async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public virtual UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             if (utils.IsMock == true)            
-                return;
+                return UniTask.CompletedTask;;
             
             services.Register<GlobalLoop>()
                 .WithParameter(_gameScope)
                 .WithParameter(utils.Data.Scope)
                 .AsSelfResolvable()
                 .AsCallbackListener();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

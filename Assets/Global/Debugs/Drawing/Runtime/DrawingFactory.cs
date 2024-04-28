@@ -10,10 +10,12 @@ namespace Global.Debugs.Drawing.Runtime
     [InlineEditor]
     public class DrawingFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<ShapeDrawer>()
                 .As<IShapeDrawer>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

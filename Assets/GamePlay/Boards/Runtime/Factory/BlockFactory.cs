@@ -2,9 +2,9 @@
 using GamePlay.Boards.Abstract.Boards;
 using GamePlay.Boards.Abstract.Factory;
 using GamePlay.Boards.Abstract.Moves;
-using Global.System.Updaters.Abstract;
 using Global.System.Updaters.Progressions;
 using Internal.Scopes.Abstract.Lifetimes;
+using Loop.Sounds.Abstract;
 using UnityEngine;
 
 namespace GamePlay.Boards.Runtime.Factory
@@ -12,28 +12,28 @@ namespace GamePlay.Boards.Runtime.Factory
     public class BlockFactory : IBlockFactory
     {
         public BlockFactory(
-            IUpdater updater,
             IProgressionFactory progressionFactory,
             IBoardView view,
             IBoardScanner scanner,
             IBoardLifecycle boardLifecycle,
+            IGameSounds sounds,
             BlockFactoryConfig config)
         {
-            _updater = updater;
             _progressionFactory = progressionFactory;
             _view = view;
             _scanner = scanner;
             _boardLifecycle = boardLifecycle;
+            _sounds = sounds;
             _config = config;
         }
 
-        private readonly IUpdater _updater;
         private readonly IProgressionFactory _progressionFactory;
         private readonly IBoardView _view;
         private readonly IBoardScanner _scanner;
         private readonly IBoardLifecycle _boardLifecycle;
+        private readonly IGameSounds _sounds;
         private readonly BlockFactoryConfig _config;
-        
+
         private IReadOnlyLifetime _lifetime;
 
         public void AddGamePlayLifetime(IReadOnlyLifetime lifetime)
@@ -55,7 +55,7 @@ namespace GamePlay.Boards.Runtime.Factory
         {
             var block = Object.Instantiate(_config.Moving, _view.BlocksRoot);
             block.name = $"Block_{tile.BoardPosition.x}_{tile.BoardPosition.y}";
-            block.Construct(_progressionFactory, lifetime, _view, this, _scanner, value, tile);
+            block.Construct(_sounds, _progressionFactory, lifetime, _view, this, _scanner, value, tile);
             return block;
         }
     }

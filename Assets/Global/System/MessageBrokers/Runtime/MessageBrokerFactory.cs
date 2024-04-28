@@ -10,7 +10,7 @@ namespace Global.System.MessageBrokers.Runtime
     [InlineEditor]
     public class MessageBrokerFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var broker = new MessageBroker();
             Msg.Inject(broker);
@@ -18,6 +18,8 @@ namespace Global.System.MessageBrokers.Runtime
             services.RegisterInstance(broker)
                 .As<IMessageBroker>()
                 .AsSelfResolvable();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Global.System.Updaters.Setup
     {
         [SerializeField] private Updater _prefab;
 
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var updater = Instantiate(_prefab);
             updater.name = "Updater";
@@ -34,6 +34,8 @@ namespace Global.System.Updaters.Setup
                 .As<IProgressionFactory>();
 
             utils.Binder.MoveToModules(updater);
+            
+            return UniTask.CompletedTask;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Loop.Runtime
 {
     public class GameLoopFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<GameLoop>()
                 .As<IGameLoop>()
@@ -20,6 +20,8 @@ namespace Loop.Runtime
 
             services.Register<GamePlayState>();
             services.Register<GameEndState>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

@@ -10,11 +10,13 @@ namespace Global.Cameras.CurrentProvider.Runtime
     [InlineEditor]
     public class CurrentCameraProviderFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<CurrentCameraProvider>()
                 .As<ICurrentCameraProvider>()
                 .AsCallbackListener();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

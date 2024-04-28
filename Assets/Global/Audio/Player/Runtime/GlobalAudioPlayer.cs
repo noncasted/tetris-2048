@@ -9,7 +9,7 @@ using VContainer;
 namespace Global.Audio.Player.Runtime
 {
     [DisallowMultipleComponent]
-    public class GlobalAudioPlayer : MonoBehaviour, IScopeEnableAsyncListener, IGlobalVolume
+    public class GlobalAudioPlayer : MonoBehaviour, IScopeEnableAsyncListener, IGlobalVolume, IGlobalAudioPlayer
     {
         [Inject]
         private void Construct(IDataStorage dataStorage)
@@ -95,5 +95,5 @@ namespace Global.Audio.Player.Runtime
             _musicSource.clip = clip;
             _musicSource.Play();
         }
-    }
+    } 
 }

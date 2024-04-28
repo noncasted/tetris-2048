@@ -12,7 +12,7 @@ namespace Global.Backend.Runtime
     [InlineEditor]
     public class BackendFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<BackendClient>()
                 .As<IBackendClient>()
@@ -20,6 +20,8 @@ namespace Global.Backend.Runtime
 
             services.Register<TransactionRunner>()
                 .As<ITransactionRunner>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

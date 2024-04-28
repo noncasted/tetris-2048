@@ -6,17 +6,7 @@ namespace GamePlay.Save.Abstract
     [Serializable]
     public class TutorialSave
     {
-        public TutorialSave()
-        {
-            IsTutorialPassed = false;
-        }
-
-        public TutorialSave(bool isTutorialPassed)
-        {
-            IsTutorialPassed = isTutorialPassed;
-        }
-
-        public readonly bool IsTutorialPassed;
+        public bool IsTutorialPassed { get; set; }
     }
 
     public class TutorialSaveSerializer : StorageEntrySerializer<TutorialSave>

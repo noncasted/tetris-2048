@@ -63,7 +63,7 @@ namespace GamePlay.Boards.Runtime.Blocks.Static
         {
             if (_value.IsUpgradeStarted == true)
                 throw new Exception();
-            
+
             _lifetime.Terminate();
             Destroy(gameObject);
         }

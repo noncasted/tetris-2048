@@ -1,0 +1,4 @@
+﻿{
+  "name": "Loop.Sounds.Runtime",
+  "references":[ "GUID:f51ebe6a0ceec4240a699833d6309b23", "GUID:1429db28f9474a389cb34ec712b3c8b3", "GUID:ef403b25d3e8417e9854f4cfbbe7bc43", "GUID:9729dbc505954c13821303f7080cae33", "GUID:47b5752185ff436fa116dfaa3b0957be" ]
+}

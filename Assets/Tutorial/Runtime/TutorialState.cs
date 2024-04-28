@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using GamePlay.Boards.Abstract.Boards;
 using GamePlay.Save.Abstract;
+using Global.Publisher.Abstract.DataStorages;
 using Internal.Scopes.Abstract.Lifetimes;
 using Loop.Abstract;
 using Tutorial.Runtime.Steps;
@@ -18,6 +19,7 @@ namespace Tutorial.Runtime
         public TutorialState(
             IBoard board,
             IGameState state,
+            IDataStorage dataStorage,
             TutorialStep_MoveAndCombine step1,
             TutorialStep_CombineWithFall step2,
             TutorialStep_SpeedModifications step3,
@@ -25,6 +27,7 @@ namespace Tutorial.Runtime
         {
             _board = board;
             _state = state;
+            _dataStorage = dataStorage;
 
             _step1 = step1;
             _step2 = step2;
@@ -34,6 +37,7 @@ namespace Tutorial.Runtime
 
         private readonly IBoard _board;
         private readonly IGameState _state;
+        private readonly IDataStorage _dataStorage;
         private readonly TutorialStep_MoveAndCombine _step1;
         private readonly TutorialStep_CombineWithFall _step2;
         private readonly TutorialStep_SpeedModifications _step3;
@@ -49,6 +53,11 @@ namespace Tutorial.Runtime
             await HandleStep(_step3);
             await HandleStep(_step4);
 
+            await _dataStorage.Save(new TutorialSave()
+            {
+                IsTutorialPassed = true
+            });
+            
             return GameStateType.Game;
 
             async UniTask HandleStep(ITutorialStep step)

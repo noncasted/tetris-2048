@@ -17,6 +17,7 @@ MonoBehaviour:
   _menuLoop: {fileID: 11400000, guid: ad70b76847f1fc94d9801048895f7fb0, type: 2}
   _overlay: {fileID: 11400000, guid: 4d42c679db2a539428151cbc244b595a, type: 2}
   _tutorial: {fileID: 11400000, guid: f4ce7e031224a404699cad3ee001c2bb, type: 2}
+  _sounds: {fileID: 11400000, guid: 6ab8249f7280a844785f50e953b445d8, type: 2}
   _serviceDefaultCallbacks: {fileID: 11400000, guid: b21fcab815aa43a4a95e81066bc6c431, type: 2}
   _scope: {fileID: 7352567884895259443, guid: 61f707479c056f1439e922b50ee84c48, type: 3}
   _servicesScene: {fileID: 11400000, guid: 36ecb2bd344ef8547ac31c2fcf3fe267, type: 2}

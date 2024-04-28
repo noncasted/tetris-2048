@@ -15,7 +15,7 @@ namespace Global.UI.Overlays.Runtime
         [SerializeField] private SceneData _scene;
         [SerializeField] private LanguageTextData _localization;
         
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             // var result = await utils.SceneLoader.LoadTyped<GlobalOverlayView>(_scene);
             //
@@ -25,6 +25,8 @@ namespace Global.UI.Overlays.Runtime
 //                .WithParameter(view.ExceptionView)
                 .WithParameter(_localization)
                 .As<IGlobalExceptionController>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

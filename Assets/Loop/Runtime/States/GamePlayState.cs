@@ -81,8 +81,10 @@ namespace Loop.Runtime.States
         {
             _state.SetPause(!_state.IsPaused.Value);
 
-            if (_state.IsPaused.Value == true)
+            if (_state.IsPaused.Value == false)
                 _updateSpeedSetter.Set(_config.Speeds[_state.Speed.Value]);
+            else
+                _updateSpeedSetter.Set(0f);
         }
 
         private void OnOverlayOpened()
@@ -105,7 +107,7 @@ namespace Loop.Runtime.States
 
             if (_state.IsPaused.Value == true)
                 _state.SetPause(false);
-            
+
             _updateSpeedSetter.Set(_config.Speeds[_state.Speed.Value]);
             _gamePlay.PassInput(direction);
         }

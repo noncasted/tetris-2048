@@ -12,7 +12,7 @@ namespace Global.Configs.Registry.Runtime
     {
         [SerializeField] [CreateSO] private ConfigsRegistry _registry;
 
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             foreach (var source in _registry.Objects)
                 source.CreateInstance(services);
@@ -20,6 +20,8 @@ namespace Global.Configs.Registry.Runtime
             services.Register<Configs>()
                 .As<IConfigs>()
                 .AsCallbackListener();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

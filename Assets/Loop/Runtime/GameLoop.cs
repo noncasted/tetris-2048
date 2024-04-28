@@ -6,6 +6,7 @@ using Internal.Scopes.Abstract.Instances.Services;
 using Internal.Scopes.Abstract.Lifetimes;
 using Loop.Abstract;
 using Loop.Runtime.States;
+using Loop.Sounds.Abstract;
 using Tutorial.Runtime;
 
 namespace Loop.Runtime
@@ -14,17 +15,20 @@ namespace Loop.Runtime
     {
         public GameLoop(
             IDataStorage dataStorage,
+            IGameSounds gameSounds,
             GamePlayState gamePlay,
             GameEndState gameEnd,
             TutorialState tutorial)
         {
             _dataStorage = dataStorage;
+            _gameSounds = gameSounds;
             _gamePlay = gamePlay;
             _gameEnd = gameEnd;
             _tutorial = tutorial;
         }
 
         private readonly IDataStorage _dataStorage;
+        private readonly IGameSounds _gameSounds;
         private readonly GamePlayState _gamePlay;
         private readonly GameEndState _gameEnd;
         private readonly TutorialState _tutorial;
@@ -38,6 +42,8 @@ namespace Loop.Runtime
 
         public async UniTask OnLoadedAsync()
         {
+            _gameSounds.StartBackgroundMusic();
+            
             var tutorialSave = await _dataStorage.GetEntry<TutorialSave>();
 
             if (tutorialSave.IsTutorialPassed == true)

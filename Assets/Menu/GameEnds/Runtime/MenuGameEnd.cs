@@ -16,11 +16,11 @@ namespace Menu.GameEnds.Runtime
         [SerializeField] private TMP_Text _currentScore;
 
         private readonly UIConstraints _constraints = new(InputConstraints.Game);
-        private readonly ViewableDelegate _exitClicked = new();
+        private readonly ViewableDelegate _exitRequested = new();
         public IUIConstraints Constraints => _constraints;
         public string Name => "GameEnd";
 
-        public IViewableDelegate ExitRequested => _exitClicked;
+        public IViewableDelegate ExitRequested => _exitRequested;
 
         public void Show(IStateHandle handle, int currentScore)
         {
@@ -36,7 +36,7 @@ namespace Menu.GameEnds.Runtime
 
         private void OnExitClicked()
         {
-            _exitClicked.Invoke();
+            _exitRequested.Invoke();
         }
     }
 }

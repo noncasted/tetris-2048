@@ -12,12 +12,14 @@ namespace Global.UI.EventSystems.Runtime
     {
         [SerializeField] private EventSystem _prefab;
         
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var eventSystem = Instantiate(_prefab);
             eventSystem.name = "EventSystem";
 
             utils.Binder.MoveToModules(eventSystem);
+            
+            return UniTask.CompletedTask;
         }
     }
 }

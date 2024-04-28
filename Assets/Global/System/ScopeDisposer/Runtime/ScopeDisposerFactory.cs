@@ -10,10 +10,12 @@ namespace Global.System.ScopeDisposer.Runtime
     [InlineEditor]
     public class ScopeDisposerFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<ScopeDisposer>()
                 .As<IScopeDisposer>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

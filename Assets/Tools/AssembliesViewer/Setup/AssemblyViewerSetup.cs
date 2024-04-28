@@ -54,7 +54,7 @@ namespace Tools.AssembliesViewer.Setup
             await scope.Callbacks.RunConstruct();
         }
 
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var domainConstructor = new DomainConstructor();
             var assemblies = domainConstructor.Construct();
@@ -91,6 +91,8 @@ namespace Tools.AssembliesViewer.Setup
                 .WithParameter(_factoryConfig);
 
             services.RegisterInstance(_tree);
+            
+            return UniTask.CompletedTask;
         }
     }
 }

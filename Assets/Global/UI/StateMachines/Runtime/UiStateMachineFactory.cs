@@ -10,10 +10,12 @@ namespace Global.UI.StateMachines.Runtime
     [InlineEditor]
     public class UiStateMachineFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<UiStateMachine>()
                 .As<IUiStateMachine>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

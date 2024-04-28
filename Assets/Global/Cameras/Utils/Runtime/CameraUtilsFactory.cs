@@ -10,11 +10,13 @@ namespace Global.Cameras.Utils.Runtime
     [InlineEditor]
     public class CameraUtilsFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<CameraUtils>()
                 .As<ICameraUtils>()
                 .AsCallbackListener();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

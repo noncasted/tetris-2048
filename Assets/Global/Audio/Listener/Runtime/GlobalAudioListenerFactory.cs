@@ -12,7 +12,7 @@ namespace Global.Audio.Listener.Runtime
     {
         [SerializeField] private GlobalGlobalAudioListener _prefab;
 
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             var switcher = Instantiate(_prefab);
             switcher.name = "AudioListener";
@@ -20,6 +20,8 @@ namespace Global.Audio.Listener.Runtime
 
             services.RegisterComponent(switcher)
                 .As<IGlobalAudioListener>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }

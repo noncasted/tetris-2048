@@ -10,11 +10,13 @@ namespace Global.System.ApplicationProxies.Runtime
     [InlineEditor]
     public class ApplicationProxyFactory : ScriptableObject, IServiceFactory
     {
-        public async UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
+        public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<ApplicationProxy>()
                 .As<IScreen>()
                 .As<IApplicationFlow>();
+            
+            return UniTask.CompletedTask;
         }
     }
 }
