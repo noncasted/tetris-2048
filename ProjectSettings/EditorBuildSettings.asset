@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GamePlay/Overlay/Config/UI_Overlay.unity
     guid: d4e2afc4616ec094abb37e23573db548
+  - enabled: 1
+    path: Assets/Tutorial/Config/Tutorial_UI.unity
+    guid: edcf0026258d70f4991a15e38f0f8b81
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f157979029c46694e8f5a734f718af86, type: 3}
   m_UseUCBPForAssetBundles: 0
