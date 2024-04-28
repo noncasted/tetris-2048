@@ -1,4 +1,4 @@
 ﻿{
   "name": "Menu.Loop.Abstract",
-  "references":[ "GUID:f51ebe6a0ceec4240a699833d6309b23", "GUID:ef403b25d3e8417e9854f4cfbbe7bc43" ]
+  "references":[ "GUID:f51ebe6a0ceec4240a699833d6309b23", "GUID:ef403b25d3e8417e9854f4cfbbe7bc43", "GUID:265d18ef1d894d07ac9f0331e8ac2297" ]
 }

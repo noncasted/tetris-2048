@@ -61,7 +61,8 @@ namespace Global.Publisher.Web.Bootstrap
                 new VolumeSaveSerializer(),
                 new LanguageSaveSerializer(),
                 new PurchasesSaveSerializer(),
-                new BoardSaveSerializer()
+                new BoardSaveSerializer(),
+                new TutorialSaveSerializer()
             };
         }
     }

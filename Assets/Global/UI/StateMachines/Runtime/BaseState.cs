@@ -22,8 +22,9 @@ namespace Global.UI.StateMachines.Runtime
         public IReadOnlyLifetime HierarchyLifetime { get; }
         public IReadOnlyLifetime StackLifetime { get; }
         public IViewableDelegate Recovered { get; }
-        
-        public void Enter(IStateHandle handle)
+        public IUIState State { get; }
+
+        public void OnEntered(IStateHandle handle)
         {
         }
         

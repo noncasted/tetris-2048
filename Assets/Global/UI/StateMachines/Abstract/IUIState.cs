@@ -5,6 +5,6 @@
         IUIConstraints Constraints { get; }
         string Name { get; }
 
-        void Enter(IStateHandle handle);
+        void OnEntered(IStateHandle handle);
     }
 }

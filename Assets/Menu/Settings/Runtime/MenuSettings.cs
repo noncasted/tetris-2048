@@ -42,7 +42,7 @@ namespace Menu.Settings.Runtime
             _globalVolume.SetVolume(save.MusicVolume, save.SoundVolume);
         }
 
-        public void Enter(IStateHandle handle)
+        public void OnEntered(IStateHandle handle)
         {
             _transition.Transit();
             handle.VisibilityLifetime.ListenTerminate(_transition.Exit);

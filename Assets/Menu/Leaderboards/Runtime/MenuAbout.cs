@@ -15,7 +15,7 @@ namespace Menu.Leaderboards.Runtime
 
         public string Name => "Menu_Settings";
 
-        public void Enter(IStateHandle handle)
+        public void OnEntered(IStateHandle handle)
         {
             _transition.Transit();
             handle.VisibilityLifetime.ListenTerminate(_transition.Exit);

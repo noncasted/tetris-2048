@@ -2,6 +2,7 @@
 using Internal.Scopes.Abstract.Containers;
 using Internal.Scopes.Abstract.Instances.Services;
 using Loop.Abstract;
+using Loop.Runtime.States;
 using UnityEngine;
 
 namespace Loop.Runtime
@@ -16,6 +17,9 @@ namespace Loop.Runtime
 
             services.Register<GameState>()
                 .As<IGameState>();
+
+            services.Register<GamePlayState>();
+            services.Register<GameEndState>();
         }
     }
 }

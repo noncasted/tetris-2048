@@ -10,6 +10,8 @@ namespace Global.UI.StateMachines.Abstract
         IReadOnlyLifetime StackLifetime { get; }
         IViewableDelegate Recovered { get; }
         
+        IUIState State { get; }
+        
         void Exit();
     }
 }

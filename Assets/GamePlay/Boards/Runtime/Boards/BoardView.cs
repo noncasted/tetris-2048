@@ -15,6 +15,7 @@ namespace GamePlay.Boards.Runtime.Boards
         [SerializeField] private Transform _blocksRoot;
 
         private readonly ViewableDelegate _moveStarted = new();
+        private readonly ViewableDelegate _boardClear = new();
 
         private IReadOnlyDictionary<int, IReadOnlyDictionary<int, IBoardTile>> _cachedTiles;
         private IReadOnlyList<IBoardTile> _cachedFlatTiles;
@@ -25,10 +26,16 @@ namespace GamePlay.Boards.Runtime.Boards
         public IReadOnlyList<IBoardTile> LoseTiles => _loseTiles;
         public IReadOnlyDictionary<int, IReadOnlyDictionary<int, IBoardTile>> Tiles => GetTiles();
         public IViewableDelegate MoveStarted => _moveStarted;
+        public IViewableDelegate BoardClear => _boardClear;
 
         public void OnMoveStarted()
         {
             _moveStarted.Invoke();
+        }
+
+        public void OnBoardClear()
+        {
+            _boardClear.Invoke();
         }
 
         public IReadOnlyList<IBoardBlock> GetCurrentBlocks()

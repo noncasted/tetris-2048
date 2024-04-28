@@ -2,9 +2,8 @@
 {
     public enum GameStateType
     {
-        Ended,
-        InGame,
-        Paused,
-        Menu
+        Game = 0,
+        End = 1,
+        Tutorial = 2
     }
 }

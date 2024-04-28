@@ -3,7 +3,6 @@ using Global.Cameras.CurrentProvider.Abstract;
 using Global.Cameras.Persistent.Abstract;
 using Global.System.ScopeDisposer.Abstract;
 using Global.UI.LoadingScreens.Abstract;
-using Global.UI.Overlays.Abstract;
 using Internal.Scopes.Abstract.Instances.Services;
 using Internal.Scopes.Abstract.Scenes;
 using Loop.Setup;

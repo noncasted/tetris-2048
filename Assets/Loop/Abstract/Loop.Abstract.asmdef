@@ -1,4 +1,4 @@
 ﻿{
   "name": "Loop.Abstract",
-  "references":[ "GUID:f51ebe6a0ceec4240a699833d6309b23", "GUID:ef403b25d3e8417e9854f4cfbbe7bc43" ]
+  "references":[ "GUID:f51ebe6a0ceec4240a699833d6309b23", "GUID:ef403b25d3e8417e9854f4cfbbe7bc43", "GUID:1429db28f9474a389cb34ec712b3c8b3" ]
 }

@@ -9,6 +9,7 @@ using Internal.Scopes.Common.Services;
 using Loop.Runtime;
 using Menu.Loop.Runtime;
 using Sirenix.OdinInspector;
+using Tutorial.Runtime;
 using UnityEngine;
 using VContainer.Unity;
 
@@ -22,6 +23,7 @@ namespace Loop.Setup
         [SerializeField] [CreateSO] private GamePlayLoopFactory _gamePlayLoop;
         [SerializeField] [CreateSO] private MenuLoopFactory _menuLoop;
         [SerializeField] [CreateSO] private OverlayFactory _overlay;
+        [SerializeField] [CreateSO] private TutorialFactory _tutorial;
         
         [SerializeField] private ServiceDefaultCallbacksFactory _serviceDefaultCallbacks;
 
@@ -39,6 +41,7 @@ namespace Loop.Setup
             _gamePlayLoop,
             _menuLoop,
             _overlay,
+            _tutorial,
             _serviceDefaultCallbacks
         };
 

@@ -1,4 +1,5 @@
-﻿using GamePlay.Boards.Abstract.Boards;
+﻿using GamePlay.Boards.Abstract.Blocks;
+using GamePlay.Boards.Abstract.Boards;
 using Internal.Scopes.Abstract.Lifetimes;
 using UnityEngine;
 
@@ -8,6 +9,6 @@ namespace GamePlay.Boards.Abstract.Factory
     {
         void AddGamePlayLifetime(IReadOnlyLifetime lifetime);
         void CreateStatic(Vector2Int position, int value);
-        void CreateMoving(IReadOnlyLifetime lifetime, IBoardTile tile, int value);
+        IMovingBlock CreateMoving(IReadOnlyLifetime lifetime, IBoardTile tile, int value);
     }
 }

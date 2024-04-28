@@ -32,6 +32,7 @@ namespace Global.UI.StateMachines.Runtime
         public IReadOnlyLifetime HierarchyLifetime => _hierarchyLifetime;
         public IReadOnlyLifetime StackLifetime => _stackLifetime;
         public IViewableDelegate Recovered => _recovered;
+        public IUIState State => _state;
 
         public void EnterAsChild()
         {
@@ -39,7 +40,7 @@ namespace Global.UI.StateMachines.Runtime
             _parent.Recovered.Listen(_hierarchyLifetime, Recover);
             
             _constraintsStorage.Add(_state.Constraints.Input);
-            _state.Enter(this);
+            _state.OnEntered(this);
         }
 
         public void EnterAsStack()
@@ -50,7 +51,7 @@ namespace Global.UI.StateMachines.Runtime
             _parent.StackLifetime.ListenTerminate(_hierarchyLifetime.Terminate);
             _visibilityLifetime = _hierarchyLifetime.CreateChild();
 
-            _state.Enter(this);
+            _state.OnEntered(this);
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Global.UI.StateMachines.Runtime
         {
             _constraintsStorage.Add(_state.Constraints.Input);
             _visibilityLifetime = _parent.VisibilityLifetime.CreateChild();
-            _state.Enter(this);
+            _state.OnEntered(this);
             _recovered.Invoke();
         }
 

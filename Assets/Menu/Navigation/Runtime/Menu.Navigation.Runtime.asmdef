@@ -1,0 +1,14 @@
+﻿{
+  "name": "Menu.Navigation.Runtime",
+  "references": [
+    "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+    "GUID:73266ad9a223494398df21fa6226ea39",
+    "GUID:47d6fa0a60ef436cbdbcb067adf46c6a",
+    "GUID:787329038b1d4b8eab22a7bb06649ac2",
+    "GUID:1429db28f9474a389cb34ec712b3c8b3",
+    "GUID:265d18ef1d894d07ac9f0331e8ac2297",
+    "GUID:4ea122410de743aa854f446e89e442a5",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:2c1111b3b6b24ebbace369d875d7040b"
+  ]
+}

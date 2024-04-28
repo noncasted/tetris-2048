@@ -1,4 +1,5 @@
-﻿using GamePlay.Boards.Abstract.Boards;
+﻿using GamePlay.Boards.Abstract.Blocks;
+using GamePlay.Boards.Abstract.Boards;
 using GamePlay.Boards.Abstract.Factory;
 using GamePlay.Boards.Abstract.Moves;
 using Global.System.Updaters.Abstract;
@@ -50,11 +51,12 @@ namespace GamePlay.Boards.Runtime.Factory
             tile.SetBlock(block);
         }
 
-        public void CreateMoving(IReadOnlyLifetime lifetime, IBoardTile tile, int value)
+        public IMovingBlock CreateMoving(IReadOnlyLifetime lifetime, IBoardTile tile, int value)
         {
             var block = Object.Instantiate(_config.Moving, _view.BlocksRoot);
             block.name = $"Block_{tile.BoardPosition.x}_{tile.BoardPosition.y}";
             block.Construct(_progressionFactory, lifetime, _view, this, _scanner, value, tile);
+            return block;
         }
     }
 }

@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace GamePlay.Boards.Runtime.Blocks.Moving
 {
-    public class MovingBlock : MonoBehaviour, IMovingBlockInteractor
+    public class MovingBlock : MonoBehaviour, IMovingBlockInteractor, IMovingBlock
     {
         [SerializeField] private Transform _transform;
         [SerializeField] private BlockConfig _config;
@@ -27,6 +27,7 @@ namespace GamePlay.Boards.Runtime.Blocks.Moving
 
         public MovingBlockValue Value => _value;
         public IBoardTile Tile => _currentTile;
+        public IReadOnlyLifetime Lifetime => _lifetime;
 
         public void Construct(
             IProgressionFactory progressionFactory,

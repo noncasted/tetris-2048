@@ -24,12 +24,12 @@ namespace GamePlay.Loop.Runtime
 
         public void Construct(IReadOnlyLifetime lifetime, GameSave save)
         {
-            _board.Construct(lifetime, save);
+            _board.Fill(lifetime, save);
         }
 
         public async UniTask<GameResult> HandleGame(IReadOnlyLifetime lifetime)
         {
-            var boardHandle = await _board.Process(lifetime);
+            var boardHandle = await _board.CreateHandle(lifetime);
             _blockSpawner.Start(lifetime);
 
             var boardResult = await boardHandle.GameCompletion.Task;

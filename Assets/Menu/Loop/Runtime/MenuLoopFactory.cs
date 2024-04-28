@@ -17,8 +17,8 @@ namespace Menu.Loop.Runtime
             var sceneServices = await utils.LoadTypedOrGetIfMock<MenuSceneServicesFactory>(_scene);
             sceneServices.Create(services);
             
-            services.Register<MenuLoop>()
-                .As<IMenuLoop>()
+            services.Register<MenuMain>()
+                .As<IMenuMain>()
                 .AsCallbackListener();
         }
     }

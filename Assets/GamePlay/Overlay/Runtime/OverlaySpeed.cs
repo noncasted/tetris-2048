@@ -10,14 +10,14 @@ namespace GamePlay.Overlay.Runtime
     {
         [SerializeField] private OverlaySpeedSelection _speedSelection;
         [SerializeField] private OverlaySpeedButtonsDictionary _buttons;
-
-        private IGameLoop _gameLoop;
+        
+        private IGameState _gameState;
 
         [Inject]
-        private void Construct(IGameLoop gameLoop)
+        private void Construct(IGameState gameState)
         {
-            _gameLoop = gameLoop;
-            _speedSelection.MoveTo(_buttons[_gameLoop.Speed].Target);
+            _gameState = gameState;
+            _speedSelection.MoveTo(_buttons[gameState.Speed.Value].Target);
         }
 
         private void OnEnable()
@@ -30,7 +30,7 @@ namespace GamePlay.Overlay.Runtime
 
         private void OnClicked(Transform target, GameSpeed speed)
         {
-            _gameLoop.SetGameSpeed(speed);
+            _gameState.SetSpeed(speed);
             _speedSelection.MoveTo(target);
         }
     }

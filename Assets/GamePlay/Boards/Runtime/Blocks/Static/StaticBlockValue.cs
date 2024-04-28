@@ -33,7 +33,10 @@ namespace GamePlay.Boards.Runtime.Blocks.Static
             _value = value;
             _text.text = value.ToString();
             _shape.Color = _colors.GetColor(value);
+            
             lifecycle.MoveStarted.Listen(lifetime, OnMoveStarted);
+            lifecycle.BoardClear.Listen(lifetime, OnBoardClear);
+            lifetime.ListenTerminate(OnBoardClear);
         }
 
         public void StartUpgrade()
@@ -58,6 +61,11 @@ namespace GamePlay.Boards.Runtime.Blocks.Static
         }
 
         private void OnMoveStarted()
+        {
+            _wasUpgradedCurrentMove = false;
+        }
+
+        private void OnBoardClear()
         {
             _wasUpgradedCurrentMove = false;
         }

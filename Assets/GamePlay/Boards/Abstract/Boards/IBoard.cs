@@ -7,8 +7,8 @@ namespace GamePlay.Boards.Abstract.Boards
 {
     public interface IBoard
     {
-        void Construct(IReadOnlyLifetime lifetime, GameSave save);
-        UniTask<BoardHandle> Process(IReadOnlyLifetime lifetime);
+        void Fill(IReadOnlyLifetime lifetime, GameSave save);
+        UniTask<BoardHandle> CreateHandle(IReadOnlyLifetime lifetime);
         void OnInput(CoordinateDirection direction);
     }
 }

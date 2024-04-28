@@ -17,9 +17,30 @@ namespace GamePlay.Boards.Runtime.Boards
 {
     public class Board : IBoard
     {
+        public Board(
+            IBoardView view,
+            IBoardLifecycle lifecycle,
+            IBlockFactory blockFactory,
+            IBoardMover mover,
+            IBoardScanner scanner,
+            IGameState gameState,
+            IScore score,
+            IGameSaver gameSaver)
+        {
+            _view = view;
+            _lifecycle = lifecycle;
+            _blockFactory = blockFactory;
+            _mover = mover;
+            _scanner = scanner;
+            _gameState = gameState;
+            _score = score;
+            _gameSaver = gameSaver;
+        }
+        
         private const int _startBlocksAmount = 4;
 
         private readonly IBoardView _view;
+        private readonly IBoardLifecycle _lifecycle;
         private readonly IBlockFactory _blockFactory;
         private readonly IBoardMover _mover;
         private readonly IBoardScanner _scanner;
@@ -32,25 +53,7 @@ namespace GamePlay.Boards.Runtime.Boards
         private List<IBoardTile> _loseTiles;
         private UniTaskCompletionSource<BoardResult> _completion;
 
-        public Board(
-            IBoardView view,
-            IBlockFactory blockFactory,
-            IBoardMover mover,
-            IBoardScanner scanner,
-            IGameState gameState,
-            IScore score,
-            IGameSaver gameSaver)
-        {
-            _view = view;
-            _blockFactory = blockFactory;
-            _mover = mover;
-            _scanner = scanner;
-            _gameState = gameState;
-            _score = score;
-            _gameSaver = gameSaver;
-        }
-
-        public void Construct(IReadOnlyLifetime lifetime, GameSave save)
+        public void Fill(IReadOnlyLifetime lifetime, GameSave save)
         {
             _blockFactory.AddGamePlayLifetime(lifetime);
             ClearBoard();
@@ -71,6 +74,7 @@ namespace GamePlay.Boards.Runtime.Boards
             foreach (var stateBlock in saveTiles)
                 _blockFactory.CreateStatic(stateBlock.Position, stateBlock.Value);
 
+            _scopeLifetime = lifetime;
 
             var score = _scanner.GetScore();
             _score.SetCurrent(score);
@@ -78,12 +82,10 @@ namespace GamePlay.Boards.Runtime.Boards
             _gameSaver.ForceSave(saveTiles);
         }
 
-        public async UniTask<BoardHandle> Process(IReadOnlyLifetime lifetime)
+        public async UniTask<BoardHandle> CreateHandle(IReadOnlyLifetime lifetime)
         {
             _completion = new UniTaskCompletionSource<BoardResult>();
             lifetime.ListenTerminate(() => _completion.TrySetCanceled());
-
-            _scopeLifetime = lifetime;
 
             foreach (var loseTile in _view.LoseTiles)
                 loseTile.BlockEntered.Listen(lifetime, OnLoseTileEntered);
@@ -93,7 +95,7 @@ namespace GamePlay.Boards.Runtime.Boards
 
         public void OnInput(CoordinateDirection direction)
         {
-            if (_gameState.State.Value != GameStateType.InGame)
+            if (_gameState.State.Value != GameStateType.Game && _gameState.State.Value != GameStateType.Tutorial)
                 return;
 
             _moveLifetime?.Terminate();
@@ -110,6 +112,7 @@ namespace GamePlay.Boards.Runtime.Boards
 
         private void ClearBoard()
         {
+            _lifecycle.OnBoardClear();
             var currentBlocks = _view.GetCurrentBlocks();
 
             foreach (var block in currentBlocks)

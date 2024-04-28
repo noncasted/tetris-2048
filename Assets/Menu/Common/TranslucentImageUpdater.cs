@@ -21,6 +21,7 @@ namespace Menu.Common
         [Inject]
         private void Construct(TranslucentImageSource imageSource)
         {
+            _config.Strength = 0f;
             _image.enabled = false;
             _image.source = imageSource;
         }

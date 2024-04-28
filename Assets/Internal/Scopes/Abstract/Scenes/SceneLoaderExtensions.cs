@@ -22,8 +22,8 @@ namespace Internal.Scopes.Abstract.Scenes
 
             throw new NullReferenceException($"Searched {typeof(T)} is not found");
         }
-
         public static async UniTask<T> LoadTyped<T>(this ISceneLoader loader, SceneData data)
+
         {
             var result = await loader.Load(data);
 

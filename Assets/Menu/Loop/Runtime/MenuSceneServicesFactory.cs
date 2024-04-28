@@ -4,9 +4,8 @@ using Menu.GameEnds.Abstract;
 using Menu.GameEnds.Runtime;
 using Menu.Leaderboards.Abstract;
 using Menu.Leaderboards.Runtime;
-using Menu.Loop.Abstract;
-using Menu.Main.Abstract;
-using Menu.Main.Runtime;
+using Menu.Navigation.Abstract;
+using Menu.Navigation.Runtime;
 using Menu.Settings.Abstract;
 using Menu.Settings.Runtime;
 using UnityEngine;
@@ -16,7 +15,6 @@ namespace Menu.Loop.Runtime
     [DisallowMultipleComponent]
     public class MenuSceneServicesFactory : SceneServicesFactory
     {
-        [SerializeField] private MenuMain _main;
         [SerializeField] private MenuSettings _settings;
         [SerializeField] private MenuAbout _about;
         [SerializeField] private MenuGameEnd _gameEnd;
@@ -24,9 +22,6 @@ namespace Menu.Loop.Runtime
 
         protected override void CollectServices(IServiceCollection services)
         {
-            services.RegisterComponent(_main)
-                .As<IMenuMain>();
-
             services.RegisterComponent(_settings)
                 .As<IMenuSettings>();
 
