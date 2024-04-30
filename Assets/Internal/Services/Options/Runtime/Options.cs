@@ -23,7 +23,7 @@ namespace Internal.Services.Options.Runtime
             foreach (var (platform, registry) in _registries)
             {
                 registry.CacheRegistry();
-                registry.AddOptions(new PlatformOptions(platform));
+                registry.AddOptions(new PlatformOptions(platform, Application.isMobilePlatform));
             }
         }
 

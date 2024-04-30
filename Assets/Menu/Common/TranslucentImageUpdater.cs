@@ -8,6 +8,7 @@ namespace Menu.Common
     {
         [SerializeField] private TranslucentImage _image;
         [SerializeField] private ScalableBlurConfig _config;
+        
         [SerializeField] [Min(0f)] private float _strength;
         [SerializeField] [Min(0f)] private float _time;
 
@@ -48,7 +49,7 @@ namespace Menu.Common
 
             var progress = _progressTime / _time;
             _config.Strength = progress * _strength;
-
+            
             if ((_direction == 1 && progress < 1f) || (_direction == -1 && progress > 0f))
                 return;
 

@@ -17,13 +17,13 @@ namespace GamePlay.Boards.Runtime.Blocks.Static
 
         [SerializeField] [ReadOnly] private int _value;
 
-        private readonly ViewableDelegate<int> _upgradeStarted = new();
+        private readonly ViewableDelegate<int, BlockUpgradeData> _upgradeStarted = new();
 
         private bool _wasUpgradedCurrentMove;
 
         public bool IsUpgradeStarted => _wasUpgradedCurrentMove;
         public int Number => _value;
-        public IViewableDelegate<int> UpgradeStarted => _upgradeStarted;
+        public IViewableDelegate<int, BlockUpgradeData> UpgradeStarted => _upgradeStarted;
 
         public void Construct(
             IReadOnlyLifetime lifetime,
@@ -39,11 +39,11 @@ namespace GamePlay.Boards.Runtime.Blocks.Static
             lifetime.ListenTerminate(OnBoardClear);
         }
 
-        public void StartUpgrade()
+        public void StartUpgrade(BlockUpgradeData data)
         {
             _wasUpgradedCurrentMove = true;
             _value *= 2;
-            _upgradeStarted?.Invoke(_value);
+            _upgradeStarted?.Invoke(_value, data);
         }
 
         public void CompleteUpgrade()

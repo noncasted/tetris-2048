@@ -1,4 +1,5 @@
-﻿using GamePlay.Boards.Abstract.Blocks;
+﻿using Common.DataTypes.Runtime.Structs;
+using GamePlay.Boards.Abstract.Blocks;
 using Global.System.Updaters.Progressions;
 using Internal.Scopes.Abstract.Lifetimes;
 
@@ -32,7 +33,8 @@ namespace GamePlay.Boards.Runtime.Blocks.Static.Actions
         {
             _interactor.SetTile(null);
             _options.Start.RemoveBlock(_options.Self);
-            _target.Value.StartUpgrade();
+            var direction = (_options.Target.BoardPosition - _options.Start.BoardPosition).Normalized();
+            _target.Value.StartUpgrade(new BlockUpgradeData(direction));
             _progressionHandle.Start(_lifetime, _options.Config.MoveTime, HandleProgress);
         }
         

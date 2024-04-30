@@ -33,7 +33,7 @@ namespace GamePlay.Boards.Runtime.Blocks.Static
             _block.Value.UpgradeStarted.Listen(lifetime, OnUpgradeStarted);
         }
 
-        private void OnUpgradeStarted(int value)
+        private void OnUpgradeStarted(int value, BlockUpgradeData _)
         {
             _progressTime = 0f;
             _shape.enabled = true;

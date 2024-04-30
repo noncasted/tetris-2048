@@ -42,7 +42,7 @@ namespace Global.Publisher.Web.Bootstrap
                 .As<ISystemLanguageProvider>()
                 .AsCallbackListener();
 
-            if (true)
+            if (options.IsEditor == true)
             {
                 services.Register<WebLanguageDebugAPI>()
                     .As<IWebLanguageAPI>();
@@ -52,6 +52,7 @@ namespace Global.Publisher.Web.Bootstrap
                 services.Register<WebLanguageExternAPI>()
                     .As<IWebLanguageAPI>();
             }
+            
             return UniTask.CompletedTask;
         }
 

@@ -8,6 +8,7 @@ using UnityEngine;
 namespace Global.UI.Localizations.Texts
 {
     [InlineEditor]
+    [CreateAssetMenu(fileName = "LanguageText", menuName = "UI/Localization/Text")]
     public class LanguageTextData : ScriptableObject
     {
         [SerializeField] [NestedScriptableObjectField] [Indent] private LanguageEntry _ru;

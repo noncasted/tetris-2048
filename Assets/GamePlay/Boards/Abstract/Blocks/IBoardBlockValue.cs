@@ -6,9 +6,10 @@ namespace GamePlay.Boards.Abstract.Blocks
     {
         bool IsUpgradeStarted { get; }
         int Number { get; }
-        IViewableDelegate<int> UpgradeStarted { get; }
+        IViewableDelegate<int, BlockUpgradeData> UpgradeStarted { get; }
+        
         bool CanBeMergedWith(int value);
-        void StartUpgrade();
+        void StartUpgrade(BlockUpgradeData data);
         void CompleteUpgrade();
     }
 }

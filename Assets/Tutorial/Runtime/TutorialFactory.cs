@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Internal.Scopes.Abstract.Containers;
 using Internal.Scopes.Abstract.Instances.Services;
 using Internal.Scopes.Abstract.Scenes;
+using Internal.Services.Options.Implementations;
 using Tutorial.Runtime.Steps.CombineWithFall;
 using Tutorial.Runtime.Steps.EndConditions;
 using Tutorial.Runtime.Steps.MoveAndCombine;
@@ -19,11 +20,19 @@ namespace Tutorial.Runtime
         {
             var servicesFactory = await utils.LoadTypedOrGetIfMock<TutorialSceneServicesFactory>(_data);
             servicesFactory.Create(services);
+            var platformOptions = utils.Options.GetOptions<PlatformOptions>();
 
-            services.Register<TutorialStep_MoveAndCombine>();
+            services.Register<TutorialStep_MoveAndCombine>()
+                .WithParameter(platformOptions);
+            
             services.Register<TutorialStep_CombineWithFall>();
-            services.Register<TutorialStep_SpeedModifications>();
-            services.Register<TutorialStep_EndConditions>();
+            
+            services.Register<TutorialStep_SpeedModifications>()
+                .WithParameter(platformOptions);
+            
+            services.Register<TutorialStep_EndConditions>()
+                .WithParameter(platformOptions);
+            
             services.Register<TutorialState>();
         }
     }

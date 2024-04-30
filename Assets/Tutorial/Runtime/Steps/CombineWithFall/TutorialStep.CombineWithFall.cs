@@ -33,10 +33,11 @@ namespace Tutorial.Runtime.Steps.CombineWithFall
         public async UniTask Handle(IReadOnlyLifetime stepLifetime)
         {
             var tile = _boardView.LoseTiles.Last();
-            var block = _factory.CreateMoving(stepLifetime, tile, 4);
             _ui.ShowFall();
             _ui.Enter(stepLifetime);
-            
+
+            await UniTask.Delay(1000);
+            var block = _factory.CreateMoving(stepLifetime, tile, 4); 
             await UniTask.WaitUntil(() => block.Lifetime.IsTerminated == true);
             _ui.ShowCombine();
             

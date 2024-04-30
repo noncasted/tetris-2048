@@ -1,8 +1,11 @@
 ﻿using Global.Inputs.Constraints.Abstract;
 using Global.UI.StateMachines.Abstract;
+using Internal.Scopes.Abstract.Options;
+using Internal.Services.Options.Implementations;
 using Menu.Common;
 using Menu.Leaderboards.Abstract;
 using UnityEngine;
+using VContainer;
 
 namespace Menu.Leaderboards.Runtime
 {
@@ -10,10 +13,19 @@ namespace Menu.Leaderboards.Runtime
     public class MenuAbout : MonoBehaviour, IMenuAbout
     {
         [SerializeField] private MenuStateTransition _transition;
+        [SerializeField] private PlatformDependentObjects _body;
 
         public IUIConstraints Constraints => new UIConstraints(InputConstraints.Game);
 
         public string Name => "Menu_Settings";
+
+        [Inject]
+        private void Construct(IOptions options)
+        {
+            var platformOptions = options.GetOptions<PlatformOptions>();
+
+            _body.SetPlatform(platformOptions);
+        }
 
         public void OnEntered(IStateHandle handle)
         {

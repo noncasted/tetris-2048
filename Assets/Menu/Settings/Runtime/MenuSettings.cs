@@ -17,7 +17,8 @@ namespace Menu.Settings.Runtime
     [DisallowMultipleComponent]
     public class MenuSettings : MonoBehaviour, IMenuSettings, IScopeLoadAsyncListener
     {
-        private const float _sliderParts = 50f;
+        private const float _soundSliderParts = 80f;
+        private const float _musicSliderParts = 50f;
         
         [SerializeField] private Slider _musicSlider;
         [SerializeField] private Slider _soundSlider;
@@ -45,7 +46,7 @@ namespace Menu.Settings.Runtime
             _musicSlider.value = save.MusicVolume;
             _soundSlider.value = save.SoundVolume;
             
-            _globalVolume.SetVolume(save.MusicVolume / _sliderParts, save.SoundVolume / _sliderParts);
+            _globalVolume.SetVolume(save.MusicVolume / _musicSliderParts, save.SoundVolume / _soundSliderParts);
         }
 
         public void OnEntered(IStateHandle handle)
@@ -59,13 +60,13 @@ namespace Menu.Settings.Runtime
 
         private void OnMusicChanged(float value)
         {
-            _globalVolume.SetVolume(_musicSlider.value / _sliderParts, _soundSlider.value / _sliderParts);
+            _globalVolume.SetVolume(_musicSlider.value / _musicSliderParts, _soundSlider.value / _soundSliderParts);
             Save();
         }
 
         private void OnSoundChanged(float value)
         {
-            _globalVolume.SetVolume(_musicSlider.value / _sliderParts, _soundSlider.value / _sliderParts);
+            _globalVolume.SetVolume(_musicSlider.value / _musicSliderParts, _soundSlider.value / _soundSliderParts);
             Save();
         }
 

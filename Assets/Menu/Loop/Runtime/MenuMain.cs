@@ -98,17 +98,16 @@ namespace Menu.Loop.Runtime
                     return;
                 }
 
-                var current = _current.State;
-                
-                _current.Exit();
-                _current = null;
-                _overlayClosed.Invoke();
-
-                if (current != state)
+                if (_current.State == state)
                 {
-                    _current = _stateMachine.EnterAsChild(this, state);
-                    _overlayOpened.Invoke();
+                    _current.Exit();
+                    _current = null;
+                    _overlayClosed.Invoke();
+                    return;
                 }
+
+                _current.Exit();
+                _current = _stateMachine.EnterAsChild(this, state);
             }
         }
     }

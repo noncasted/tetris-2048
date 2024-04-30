@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Common.DataTypes.Runtime.Structs
 {
@@ -59,6 +60,11 @@ namespace Common.DataTypes.Runtime.Structs
                 return Horizontal.Left;
 
             return Horizontal.Right;
+        }
+
+        public static Vector2Int Normalized(this Vector2Int direction)
+        {
+            return new Vector2Int(Math.Clamp(direction.x, -1, 1), Math.Clamp(direction.y, -1, 1));
         }
     }
 }
