@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using GamePlay.Loop.Scores.Abstract;
+using Global.Publisher.Abstract.Advertisment;
 using Global.UI.StateMachines.Abstract;
 using Internal.Scopes.Abstract.Lifetimes;
 using Loop.Abstract;
@@ -13,27 +14,27 @@ namespace Loop.Runtime.States
     {
         public GameEndState(
             IUiStateMachine stateMachine,
-            IMenuMain main,
             IMenuGameEnd gameEnd,
-            IScore score)
+            IScore score,
+            IAds ads)
         {
             _stateMachine = stateMachine;
-            _main = main;
             _gameEnd = gameEnd;
             _score = score;
+            _ads = ads;
         }
 
         private readonly IUiStateMachine _stateMachine;
-        private readonly IMenuMain _main;
         private readonly IMenuGameEnd _gameEnd;
         private readonly IScore _score;
+        private readonly IAds _ads;
 
         public UniTask<GameStateType> Enter(IReadOnlyLifetime stateLifetime)
         {
             var completion = new UniTaskCompletionSource<GameStateType>();
             stateLifetime.ListenTerminate(() => completion.TrySetCanceled());
 
-            var handle = _stateMachine.EnterAsChild(_main, _gameEnd);
+            var handle = _stateMachine.EnterAsStack(_stateMachine.Base, _gameEnd);
             _gameEnd.Show(handle, _score.Current.Value);
 
             _gameEnd.ExitRequested.Listen(stateLifetime, () =>
@@ -41,6 +42,8 @@ namespace Loop.Runtime.States
                 handle.Exit();
                 completion.TrySetResult(GameStateType.Game);
             });
+            
+            _ads.ShowInterstitial();
 
             return completion.Task;
         }

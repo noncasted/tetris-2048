@@ -1,7 +1,9 @@
 {
     "name": "GamePlay.Save.Abstract",
     "references": [
-        "GUID:25f79b9f7aeb42a8af7eb332b6a4ba79"
+        "GUID:25f79b9f7aeb42a8af7eb332b6a4ba79",
+        "GUID:dc9bba1195174e92a87bca1995d0eebf",
+        "GUID:fa1a376842d04ed88314b368023b90b4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

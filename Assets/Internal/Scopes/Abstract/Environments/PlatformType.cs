@@ -3,7 +3,7 @@
     public enum PlatformType
     {
         ItchIO,
-        YandexGames,
+        Yandex,
         IOS,
         Android
     }

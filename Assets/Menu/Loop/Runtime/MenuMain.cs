@@ -53,7 +53,7 @@ namespace Menu.Loop.Runtime
 
         public void Enter()
         {
-            _stateMachine.EnterAsChild(_stateMachine.Base, this);
+            var handle = _stateMachine.EnterAsStack(_stateMachine.Base, this);
             _stateMachine.EnterAsChild(this, _navigation);
         }
 

@@ -13,20 +13,10 @@ namespace Global.Publisher.Abstract.DataStorages
             ValueType = typeof(T);
         }
 
-        private readonly ViewableDelegate<string, string> _reSerialized = new();
-
         private T _value;
 
         public string SaveKey { get; }
         public Type ValueType { get; }
-        public IViewableDelegate<string, string> ReSerialized => _reSerialized;
-
-        public void Save()
-        {
-            var raw = JsonConvert.SerializeObject(_value);
-
-            _reSerialized.Invoke(SaveKey, raw);
-        }
 
         public string Serialize()
         {

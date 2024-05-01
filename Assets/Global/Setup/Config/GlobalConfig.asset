@@ -39,7 +39,7 @@ MonoBehaviour:
   _system: {fileID: 11400000, guid: 234a30f9a9563ba4695033a8b17cae64, type: 2}
   _ui: {fileID: 11400000, guid: 87b0be3b60ebed6449a2a25fe3fbf67b, type: 2}
   _globalLoop: {fileID: 11400000, guid: 24bc63408099b334f8050f4463f479ab, type: 2}
-  _publisherSdk: {fileID: 11400000, guid: a7a6608e698f54249907145b756aff63, type: 2}
+  _publisher: {fileID: 11400000, guid: d13b5194d40b6aa45bd057777c001fbd, type: 2}
   _backend: {fileID: 11400000, guid: e78942d14aeb14b4e93daa5d02828353, type: 2}
   _serviceDefaultCallbacks: {fileID: 11400000, guid: b21fcab815aa43a4a95e81066bc6c431, type: 2}
   _configs: {fileID: 11400000, guid: ce394c6a43a77d043908cdf1713ae8f4, type: 2}

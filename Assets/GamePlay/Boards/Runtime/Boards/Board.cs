@@ -9,6 +9,7 @@ using GamePlay.Boards.Abstract.Moves;
 using GamePlay.Boards.Runtime.Blocks.Moving;
 using GamePlay.Loop.Scores.Abstract;
 using GamePlay.Save.Abstract;
+using Global.Saves;
 using Internal.Scopes.Abstract.Lifetimes;
 using Loop.Abstract;
 using UnityEngine;
@@ -85,7 +86,6 @@ namespace GamePlay.Boards.Runtime.Boards
         public async UniTask<BoardHandle> CreateHandle(IReadOnlyLifetime lifetime)
         {
             _completion = new UniTaskCompletionSource<BoardResult>();
-            lifetime.ListenTerminate(() => _completion.TrySetCanceled());
 
             foreach (var loseTile in _view.LoseTiles)
                 loseTile.BlockEntered.Listen(lifetime, OnLoseTileEntered);

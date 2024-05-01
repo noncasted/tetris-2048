@@ -7,7 +7,6 @@ namespace Global.Publisher.Abstract.DataStorages
     {
         string SaveKey { get; }
         Type ValueType { get; }
-        IViewableDelegate<string, string> ReSerialized { get; }
 
         string Serialize();
         void Deserialize(string raw);

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Common.DataTypes.Runtime.Attributes;
 using Global.Audio.Compose;
 using Global.Backend.Runtime;
 using Global.Cameras.Compose;
@@ -6,7 +7,7 @@ using Global.Configs.Compose;
 using Global.Debugs.Drawing.Runtime;
 using Global.GameLoops.Runtime;
 using Global.Inputs.Compose;
-using Global.Publisher.Abstract.Bootstrap;
+using Global.Publisher.Setup;
 using Global.System.Compose;
 using Global.UI.Compose;
 using Internal.Scopes.Abstract.Instances.Services;
@@ -22,17 +23,17 @@ namespace Global.Setup.Scope
     [CreateAssetMenu(fileName = "GlobalConfig", menuName = "Global/Config")]
     public class GlobalScopeConfig : ScriptableObject, IServiceScopeConfig
     {
-        [SerializeField] private AudioCompose _audio;
-        [SerializeField] private CameraCompose _camera;
-        [SerializeField] private InputCompose _input;
-        [SerializeField] private SystemCompose _system;
-        [SerializeField] private GlobalUICompose _ui;
-        [SerializeField] private GlobalLoopFactory _globalLoop;
-        [SerializeField] private PublisherSdkFactory _publisherSdk;
-        [SerializeField] private BackendFactory _backend;
-        [SerializeField] private ServiceDefaultCallbacksFactory _serviceDefaultCallbacks;
-        [SerializeField] private ConfigsCompose _configs;
-        [SerializeField] private DrawingFactory _drawing;
+        [SerializeField] [CreateSO] private AudioCompose _audio;
+        [SerializeField] [CreateSO] private CameraCompose _camera;
+        [SerializeField] [CreateSO] private InputCompose _input;
+        [SerializeField] [CreateSO] private SystemCompose _system;
+        [SerializeField] [CreateSO] private GlobalUICompose _ui;
+        [SerializeField] [CreateSO] private GlobalLoopFactory _globalLoop;
+        [SerializeField] [CreateSO] private PublisherSetup _publisher;
+        [SerializeField] [CreateSO] private BackendFactory _backend;
+        [SerializeField] [CreateSO] private ServiceDefaultCallbacksFactory _serviceDefaultCallbacks;
+        [SerializeField] [CreateSO] private ConfigsCompose _configs;
+        [SerializeField] [CreateSO] private DrawingFactory _drawing;
         
         [SerializeField] private GlobalScope _scope;
         [SerializeField] private SceneData _servicesScene;
@@ -55,7 +56,7 @@ namespace Global.Setup.Scope
 
         private IServiceFactory[] GetFactories() => new IServiceFactory[]
         {
-            _publisherSdk,
+            _publisher,
             _globalLoop,
             _backend,
             _serviceDefaultCallbacks,

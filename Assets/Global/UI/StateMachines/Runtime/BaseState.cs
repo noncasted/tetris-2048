@@ -9,18 +9,21 @@ namespace Global.UI.StateMachines.Runtime
     {
         public BaseState()
         {
-            VisibilityLifetime = new Lifetime();
+            _visibility = new Lifetime();
+            _stack = new Lifetime();
             HierarchyLifetime = new Lifetime();
-            StackLifetime = new Lifetime();
             Recovered = new ViewableDelegate();
         }
         
         public IUIConstraints Constraints => new UIConstraints();
         public string Name => "Base";
-        
-        public IReadOnlyLifetime VisibilityLifetime { get; }
+
+        private Lifetime _visibility;
+        private Lifetime _stack;
+
+        public IReadOnlyLifetime VisibilityLifetime => _visibility;
         public IReadOnlyLifetime HierarchyLifetime { get; }
-        public IReadOnlyLifetime StackLifetime { get; }
+        public IReadOnlyLifetime StackLifetime => _stack;
         public IViewableDelegate Recovered { get; }
         public IUIState State { get; }
 
@@ -34,6 +37,11 @@ namespace Global.UI.StateMachines.Runtime
 
         public void OnStacked(IInternalStateHandle head)
         {
+            _stack.Terminate();
+            _visibility.Terminate();
+
+            _stack = new Lifetime();
+            _visibility = new Lifetime();
         }
 
         public void ClearStack()

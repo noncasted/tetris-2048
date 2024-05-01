@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.DataTypes.Runtime.Attributes;
+using Cysharp.Threading.Tasks;
 using Internal.Scopes.Abstract.Containers;
 using Internal.Scopes.Abstract.Instances.Services;
 using Loop.Abstract;
@@ -9,6 +10,8 @@ namespace Loop.Runtime
 {
     public class GameLoopFactory : ScriptableObject, IServiceFactory
     {
+        [SerializeField] [CreateSO] private GameLoopCheats _cheats;
+        
         public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
             services.Register<GameLoop>()
@@ -20,6 +23,8 @@ namespace Loop.Runtime
 
             services.Register<GamePlayState>();
             services.Register<GameEndState>();
+
+            services.RegisterInstance(_cheats);
             
             return UniTask.CompletedTask;
         }

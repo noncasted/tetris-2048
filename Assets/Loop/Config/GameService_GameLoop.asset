@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0eeb540e254bb5aad6e1e0695755e0, type: 3}
   m_Name: GameService_GameLoop
   m_EditorClassIdentifier: 
+  _cheats: {fileID: 11400000, guid: 6c8b0a5ecb2ac564c84e31d7f3d899c6, type: 2}

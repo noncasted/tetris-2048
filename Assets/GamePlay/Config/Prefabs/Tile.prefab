@@ -83,9 +83,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 679830585286288607}
   _position: {x: 0, y: 2}
-  _bounds:
-    _rightTop: {fileID: 5421795994048854635}
-    _leftBottom: {fileID: 7995427218705760711}
   _isLocked: 0
   _isTaken: 0
 --- !u!114 &6122100855920980771
@@ -169,6 +166,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

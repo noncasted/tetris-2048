@@ -20,11 +20,8 @@ namespace Internal.Services.Options.Runtime
 
         public void Setup()
         {
-            foreach (var (platform, registry) in _registries)
-            {
-                registry.CacheRegistry();
-                registry.AddOptions(new PlatformOptions(platform, Application.isMobilePlatform));
-            }
+            _registries[_currentPlatform].CacheRegistry();
+            _registries[_currentPlatform].AddOptions(new PlatformOptions(_currentPlatform, Application.isMobilePlatform));
         }
 
         public T GetOptions<T>() where T : class, IOptionsEntry

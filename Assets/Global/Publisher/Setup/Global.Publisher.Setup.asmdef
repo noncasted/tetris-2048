@@ -1,0 +1,4 @@
+﻿{
+  "name": "Global.Publisher.Setup",
+  "references":[ "GUID:1429db28f9474a389cb34ec712b3c8b3", "GUID:f51ebe6a0ceec4240a699833d6309b23", "GUID:9df4a13082192ce46940fac8da7ce588", "GUID:e7513266e5234d51b259d8af05238a8f", "GUID:ef403b25d3e8417e9854f4cfbbe7bc43", "GUID:b879d10afc6a48b1bbf65d656187182f" ]
+}

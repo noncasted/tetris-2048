@@ -38,9 +38,12 @@ namespace Global.UI.StateMachines.Runtime
 
         public IStateHandle EnterAsStack(IUIState parent, IUIState state)
         {
+            if (_handles.TryGetValue(state, out var currentHandle) == true)
+                currentHandle.Exit();
+            
             var headHandle = _handles[parent];
-
             var childHandle = new StateHandle(headHandle, state, _constraintsStorage);
+            
             _handles[state] = childHandle;
             childHandle.EnterAsStack();
             

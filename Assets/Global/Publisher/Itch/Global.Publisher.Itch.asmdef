@@ -1,0 +1,12 @@
+﻿{
+  "name": "Global.Publisher.Itch",
+  "references": [
+    "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+    "GUID:1429db28f9474a389cb34ec712b3c8b3",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:7347c5f7bb3f4b8b84942d18625079ec",
+    "GUID:dc9bba1195174e92a87bca1995d0eebf",
+    "GUID:9df4a13082192ce46940fac8da7ce588",
+    "GUID:fa1a376842d04ed88314b368023b90b4"
+  ]
+}

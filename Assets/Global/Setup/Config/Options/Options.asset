@@ -97,4 +97,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  _optionsPriority: 0000000001000000
+  _currentPlatform: 0
