@@ -1,4 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
+using Global.Audio.Player.Abstract;
+using Global.Audio.Player.Runtime;
 using Global.Publisher.Abstract.Advertisment;
 using Global.Publisher.Abstract.DataStorages;
 using Global.Publisher.Abstract.Purchases;
@@ -18,17 +20,20 @@ namespace Global.Publisher.Yandex.Advertisement
             IDataStorage dataStorage,
             IAdsAPI api,
             IProductLink adsProduct,
+            IGlobalVolume volume, 
             IUpdateSpeedSetter speedSetter)
         {
             _callbacks = callbacks;
             _dataStorage = dataStorage;
             _api = api;
             _adsProduct = adsProduct;
+            _volume = volume;
             _speedSetter = speedSetter;
         }
 
         private readonly IAdsAPI _api;
         private readonly IProductLink _adsProduct;
+        private readonly IGlobalVolume _volume;
         private readonly IUpdateSpeedSetter _speedSetter;
         private readonly IDataStorage _dataStorage;
         private readonly YandexCallbacks _callbacks;
@@ -45,9 +50,19 @@ namespace Global.Publisher.Yandex.Advertisement
             Msg.Listen<PurchaseEvent>(lifetime, OnProductUnlocked);
         }
 
-        public void ShowInterstitial()
+        public async UniTask ShowInterstitial()
         {
-            ProcessInterstitial().Forget();
+            if (_save.IsDisabled == true)
+                return;
+            
+            _speedSetter.Pause();   
+            _volume.Mute();
+           
+            var handler = new InterstitialHandler(_callbacks, _api);
+            await handler.Show();
+            
+            _volume.Unmute();
+            _speedSetter.Continue();    
         }
 
         public async UniTask<RewardAdResult> ShowRewarded()
@@ -58,19 +73,6 @@ namespace Global.Publisher.Yandex.Advertisement
             _speedSetter.Continue();   
 
             return result;
-        }
-
-        private async UniTaskVoid ProcessInterstitial()
-        {
-            if (_save.IsDisabled == true)
-                return;
-            
-            _speedSetter.Pause();   
-           
-            var handler = new InterstitialHandler(_callbacks, _api);
-            await handler.Show();
-            
-            _speedSetter.Continue();    
         }
 
         private void OnProductUnlocked(PurchaseEvent purchase)

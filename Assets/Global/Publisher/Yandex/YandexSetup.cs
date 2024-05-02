@@ -32,7 +32,7 @@ namespace Global.Publisher.Yandex
     public class YandexSetup : ScriptableObject, IServiceFactory
     {
         [SerializeField] private YandexCallbacks _callbacksPrefab;
-        
+
         [SerializeField] [CreateSO] private SceneData _debugScene;
         [SerializeField] [CreateSO] private ShopProductsRegistry _productsRegistry;
         [SerializeField] [CreateSO] private ProductLink _adsDisableProduct;
@@ -49,7 +49,7 @@ namespace Global.Publisher.Yandex
 
             if (options.IsEditor == true)
                 return RegisterEditorApis(services, utils.SceneLoader, yandexCallbacks);
-
+            
             RegisterBuildApis(services);
 
             return UniTask.CompletedTask;

@@ -1,6 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using GamePlay.Save.Abstract;
+using Global.Publisher.Abstract.Advertisment;
 using Global.Publisher.Abstract.DataStorages;
 using Global.Saves;
 using Internal.Scopes.Abstract.Instances.Services;
@@ -15,12 +15,14 @@ namespace Loop.Runtime
     public class GameLoop : IScopeLoadAsyncListener, IScopeLifetimeListener, IGameLoop
     {
         public GameLoop(
+            IAds ads,
             IDataStorage dataStorage,
             IGameSounds gameSounds,
             GamePlayState gamePlay,
             GameEndState gameEnd,
             TutorialState tutorial)
         {
+            _ads = ads;
             _dataStorage = dataStorage;
             _gameSounds = gameSounds;
             _gamePlay = gamePlay;
@@ -28,12 +30,13 @@ namespace Loop.Runtime
             _tutorial = tutorial;
         }
 
+        private readonly IAds _ads;
         private readonly IDataStorage _dataStorage;
         private readonly IGameSounds _gameSounds;
         private readonly GamePlayState _gamePlay;
         private readonly GameEndState _gameEnd;
         private readonly TutorialState _tutorial;
-        
+
         private ILifetime _lifetime;
 
         public void OnLifetimeCreated(ILifetime lifetime)
@@ -44,7 +47,7 @@ namespace Loop.Runtime
         public async UniTask OnLoadedAsync()
         {
             _gameSounds.StartBackgroundMusic();
-            
+
             var tutorialSave = await _dataStorage.GetEntry<TutorialSave>();
 
             if (tutorialSave.IsTutorialPassed == true)
@@ -60,7 +63,7 @@ namespace Loop.Runtime
                 var stepLifetime = _lifetime.CreateChild();
                 var next = await step.Enter(stepLifetime);
                 stepLifetime.Terminate();
-                
+
                 step = next switch
                 {
                     GameStateType.Game => _gamePlay,

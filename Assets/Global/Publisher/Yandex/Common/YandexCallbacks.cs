@@ -7,6 +7,8 @@ namespace Global.Publisher.Yandex.Common
 {
     public class YandexCallbacks : MonoBehaviour
     {
+        private bool _isInitialized;
+
         public event Action<string> UserDataReceived;
         public event Action<string> LeaderboardsReceived;
         public event Action InterstitialShown;
@@ -19,11 +21,28 @@ namespace Global.Publisher.Yandex.Common
         public event Action<string> PurchaseFailed;
         public event Action Reviewed;
 
+        public bool IsInitialized
+        {
+            get
+            {
+#if UNITY_EDITOR
+                return true;
+#endif
+
+                return _isInitialized;
+            }
+        }
+
+        public void OnInitialized()
+        {
+            _isInitialized = true;
+        }
+
         public void OnUserDataReceived(string data)
         {
             UserDataReceived?.Invoke(data);
         }
-        
+
         public void OnLeaderboardsReceived(string data)
         {
             LeaderboardsReceived?.Invoke(data);
@@ -62,17 +81,17 @@ namespace Global.Publisher.Yandex.Common
         public void OnProductsReceived(string rawProduct)
         {
             var products = JsonConvert.DeserializeObject<InternalProduct[]>(rawProduct);
-            
+
             ProductsReceived?.Invoke(products);
         }
-        
+
         public void OnPurchasesReceived(string rawPurchases)
         {
             var purchases = JsonConvert.DeserializeObject<InternalPurchase[]>(rawPurchases);
-            
+
             PurchasesReceived?.Invoke(purchases);
         }
-        
+
         public void OnReview()
         {
             Reviewed?.Invoke();

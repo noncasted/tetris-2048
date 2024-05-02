@@ -22,7 +22,6 @@ namespace Global.Publisher.Yandex.DataStorages
             }
         }
 
-        private const string Key = "save";
         private readonly Dictionary<Type, IStorageEntrySerializer> _typeToSerializer = new();
         private readonly Dictionary<string, IStorageEntrySerializer> _keyToSerializer = new();
 
@@ -35,6 +34,8 @@ namespace Global.Publisher.Yandex.DataStorages
 
             _callbacks.UserDataReceived += OnDataReceived;
 
+            await UniTask.WaitUntil(() => _callbacks.IsInitialized == true);
+            
             _api.Get_Internal();
             var data = await completion.Task;
 

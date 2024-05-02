@@ -26,7 +26,9 @@
         },
 
         GetUserData: function () {
+            console.log("Request user data");
             _player.getData().then(data => {
+                console.log("Convert received data");
                 const rawData = JSON.stringify(data);
                 console.log("On data received");
                 console.log(rawData);

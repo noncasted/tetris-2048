@@ -1,5 +1,4 @@
 ﻿using System.Runtime.InteropServices;
-using UnityEngine;
 
 namespace Global.Publisher.Yandex.DataStorages
 {
@@ -18,7 +17,6 @@ namespace Global.Publisher.Yandex.DataStorages
 
         public void Set_Internal(string data)
         {
-            Debug.Log($"Save internal: {data}");
             SaveUserData(data);
         }
     }

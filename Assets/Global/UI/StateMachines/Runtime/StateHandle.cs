@@ -46,7 +46,6 @@ namespace Global.UI.StateMachines.Runtime
 
         public void EnterAsStack()
         {
-            Debug.Log($"On entered as stack: {_state.GetType().Name}");
             _constraintsStorage.Add(_state.Constraints.Input);
             _parent.OnStacked(this);
             

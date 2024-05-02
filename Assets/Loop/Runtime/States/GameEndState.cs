@@ -29,7 +29,7 @@ namespace Loop.Runtime.States
         private readonly IScore _score;
         private readonly IAds _ads;
 
-        public UniTask<GameStateType> Enter(IReadOnlyLifetime stateLifetime)
+        public async UniTask<GameStateType> Enter(IReadOnlyLifetime stateLifetime)
         {
             var completion = new UniTaskCompletionSource<GameStateType>();
             stateLifetime.ListenTerminate(() => completion.TrySetCanceled());
@@ -42,10 +42,10 @@ namespace Loop.Runtime.States
                 handle.Exit();
                 completion.TrySetResult(GameStateType.Game);
             });
-            
-            _ads.ShowInterstitial();
 
-            return completion.Task;
+            await _ads.ShowInterstitial();
+
+            return await completion.Task;
         }
     }
 }

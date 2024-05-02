@@ -4,7 +4,7 @@ namespace Global.Publisher.Abstract.Advertisment
 {
     public interface IAds
     {
-        void ShowInterstitial();
+        UniTask ShowInterstitial();
         UniTask<RewardAdResult> ShowRewarded();
     }
 }

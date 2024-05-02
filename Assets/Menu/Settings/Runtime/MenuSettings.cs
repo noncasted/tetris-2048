@@ -18,7 +18,7 @@ namespace Menu.Settings.Runtime
     [DisallowMultipleComponent]
     public class MenuSettings : MonoBehaviour, IMenuSettings, IScopeLoadAsyncListener
     {
-        private const float _soundSliderParts = 80f;
+        private const float _soundSliderParts = 120f;
         private const float _musicSliderParts = 50f;
         
         [SerializeField] private Slider _musicSlider;

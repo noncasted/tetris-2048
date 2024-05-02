@@ -4,7 +4,7 @@
     {
         public string GetLanguage_Internal()
         {
-            return "ru";
+            return "en";
         }
     }
 }
