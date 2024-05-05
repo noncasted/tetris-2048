@@ -4,42 +4,55 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>{{{ PRODUCT_NAME }}}</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="./style.css">
 
     <!-- Yandex Games SDK -->
     <script src="https://yandex.ru/games/sdk/v2"></script>
+
+    <style>
+        /* Убираем выделение по нажатию клавиш */
+        canvas:focus {
+            outline: none;
+        }
+
+        html, body {
+            /* Убираем отступы */
+            padding: 0;
+            margin: 0;
+            /* Отключаем скролл и лонгтап на IOS */
+            overflow: hidden;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            /* Ставим высоту на 100% */
+            height: 100%;
+        }
+    </style>
+
+    <!-- Additional head modules -->
+
 </head>
+
 <body>
-
-<div id="unity-container" style="position: absolute; width: 100%; height: 100%; left: 0;  top: 0;">
-    <canvas id="unity-canvas" style="position: absolute; width: 100%; height: 100%"></canvas>
-
-<!--    <div style="position:absolute; width: 100%; height: 10%; bottom: 0;">-->
-<!--        &lt;!&ndash; Yandex.RTB R-A-1774866-27 &ndash;&gt;-->
-<!--        <div id="yandex_rtb_R-A-1774866-27"></div>-->
-<!--        <script>-->
-<!--            window.yaContextCb.push(() => {-->
-<!--                Ya.Context.AdvManager.render({-->
-<!--                    renderTo: 'yandex_rtb_R-A-1774866-27',-->
-<!--                    blockId: 'R-A-1774866-27'-->
-<!--                })-->
-<!--            })-->
-<!--        </script>-->
-<!--    </div>-->
-
+<div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+</div>
+<div id="loading-cover" style="display:none;">
     <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
+        <div id="unity-logo"><img src="logo.png"></div>
+        <div id="unity-progress-bar-empty" style="display: none;">
             <div id="unity-progress-bar-full"></div>
         </div>
+        <div class="spinner"></div>
     </div>
-    <div id="unity-warning"></div>
-
 </div>
 
 <script>
+    console.log("Start init")
     let container = document.querySelector("#unity-container");
     let canvas = document.querySelector("#unity-canvas");
     let loadingBar = document.querySelector("#unity-loading-bar");
@@ -60,51 +73,31 @@
         productVersion: "0.1.0"
     };
 
-    // By default Unity keeps WebGL canvas render target size matched with
-    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-    // Set this to false if you want to decouple this synchronization from
-    // happening inside the engine, and you would instead like to size up
-    // the canvas DOM size and WebGL render target sizes yourself.
-    // config.matchWebGLToCanvasSize = false;
-
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        let meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-    } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        config.devicePixelRatio = 1;
     }
 
     loadingBar.style.display = "block";
-
-    let myGameInstance = null;
 
     let script = document.createElement("script");
     script.src = loaderUrl;
 
     console.log('load game v1.0.0');
 
+    let _leaderboards = null;
+    let _payments = null;
+    let _player = null;
+    let _ysdk = null;
+    let _myGameInstance = null;
+
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-            myGameInstance = unityInstance;
+            _myGameInstance = unityInstance;
             loadingBar.style.display = "none";
-            console.log('on loaded');
+            console.log('Unity instance loaded');
 
             //fullscreenButton.onclick = () => {
             //    unityInstance.SetFullscreen(1);
@@ -115,80 +108,35 @@
     };
 
     document.body.appendChild(script);
-    
-    let _leaderboards;
-    let _payments = null;
-    let _player;
+    console.log('Begin initialization');
 
-    YaGames.init().then(
-        ysdk => {
-            console.log('Begin initialization');
-            window.ysdk = ysdk;
-            auth()
-            initLib();
-            initPayments();
-            console.log('Yandex SDK initialized');
+    function Initialize() {
+        YaGames.init().then(ysdk => {
+            _ysdk = ysdk;
+
+            ysdk.getPlayer().then(player => {
+                _player = player;
+
+                ysdk.getLeaderboards().then(leaderboards => {
+                    _leaderboards = leaderboards;
+
+                    SendCallback("OnInitialized");
+                });
+            });
         });
 
-    function auth() {
-        initPlayer()
-            .then(player => {
-                if (player.getMode() === 'lite') {
-                    // Игрок не авторизован.
-                    ysdk.auth.openAuthDialog().then(() => {
-                        // Игрок успешно авторизован
-                        initPlayer().catch(error => {
-                            console.log(error);
-                            // Ошибка при инициализации объекта Player.
-                        });
-                    }).catch(() => {
-                        // Игрок не авторизован.
-                    });
-                }
-                
-                SendCallback("OnInitialized");
-                
-            })
-            .catch(error => {
-                console.log(error);
-                // Ошибка при инициализации объекта Player.
-            });
-    }
-
-    function initLib() {
-        ysdk.getLeaderboards()
-            .then(leaderboards => _leaderboards = leaderboards);
-    }
-
-    function initPayments() {
-        ysdk.getPayments({signed: true})
-            .then(payments => {
-                _payments = payments;
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        console.log('Yandex SDK initialized');
     }
 
     function SendCallback(target) {
         console.log("send callback to " + target);
 
-        myGameInstance.SendMessage("YandexCallbacks", target);
+        _myGameInstance.SendMessage("YandexCallbacks", target);
     }
 
     function SendDataCallback(target, data) {
         console.log("send data callback to " + target);
-        myGameInstance.SendMessage("YandexCallbacks", target, data);
-    }
-
-    function initPlayer() {
-        return ysdk
-            .getPlayer()
-            .then(player => {
-                _player = player;
-                console.log("Player initialized");
-                return _player;
-            });
+        _myGameInstance.SendMessage("YandexCallbacks", target, data);
     }
 </script>
 </body>

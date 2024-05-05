@@ -1,6 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using GamePlay.Loop.Scores.Abstract;
+using GamePlay.Save.Abstract;
 using Global.Publisher.Abstract.Advertisment;
+using Global.Saves;
 using Global.UI.StateMachines.Abstract;
 using Internal.Scopes.Abstract.Lifetimes;
 using Loop.Abstract;
@@ -16,18 +19,21 @@ namespace Loop.Runtime.States
             IUiStateMachine stateMachine,
             IMenuGameEnd gameEnd,
             IScore score,
-            IAds ads)
+            IAds ads,
+            IGameSaver gameSaver)
         {
             _stateMachine = stateMachine;
             _gameEnd = gameEnd;
             _score = score;
             _ads = ads;
+            _gameSaver = gameSaver;
         }
 
         private readonly IUiStateMachine _stateMachine;
         private readonly IMenuGameEnd _gameEnd;
         private readonly IScore _score;
         private readonly IAds _ads;
+        private readonly IGameSaver _gameSaver;
 
         public async UniTask<GameStateType> Enter(IReadOnlyLifetime stateLifetime)
         {
@@ -43,9 +49,13 @@ namespace Loop.Runtime.States
                 completion.TrySetResult(GameStateType.Game);
             });
 
+            var completionResult = await completion.Task;
+
             await _ads.ShowInterstitial();
 
-            return await completion.Task;
+            _gameSaver.ForceSave(new List<BoardStateBlock>());
+
+            return completionResult;
         }
     }
 }

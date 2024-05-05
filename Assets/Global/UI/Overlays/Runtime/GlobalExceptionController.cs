@@ -16,7 +16,7 @@ namespace Global.UI.Overlays.Runtime
         
         public void Show()
         {
-            var error = _localization.GetText();
+            var error = _localization.Text.Value;
             _view.Show(error);
         }
     }

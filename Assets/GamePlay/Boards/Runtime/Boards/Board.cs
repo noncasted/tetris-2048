@@ -107,7 +107,7 @@ namespace GamePlay.Boards.Runtime.Boards
             _score.SetCurrent(score);
 
             var tiles = _scanner.GetState();
-            _gameSaver.SaveTemporary(tiles);
+            _gameSaver.ForceSave(tiles);
         }
 
         private void ClearBoard()

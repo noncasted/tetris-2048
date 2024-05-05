@@ -3,6 +3,8 @@ using System.Linq;
 using GamePlay.BlockSpawners.Abstract;
 using GamePlay.Boards.Abstract.Boards;
 using GamePlay.Boards.Abstract.Factory;
+using GamePlay.Boards.Abstract.Moves;
+using GamePlay.Save.Abstract;
 using Global.System.Updaters.Abstract;
 using Internal.Scopes.Abstract.Lifetimes;
 using UnityEngine;
@@ -15,15 +17,21 @@ namespace GamePlay.BlockSpawners.Runtime
             IUpdater updater,
             IBoardView view,
             IBlockFactory factory,
+            IGameSaver gameSaver,
+            IBoardScanner scanner,
             BlockSpawnerConfig config)
         {
             _factory = factory;
+            _gameSaver = gameSaver;
+            _scanner = scanner;
             _updater = updater;
             _view = view;
             _config = config;
         }
 
         private readonly IBlockFactory _factory;
+        private readonly IGameSaver _gameSaver;
+        private readonly IBoardScanner _scanner;
         private readonly IUpdater _updater;
         private readonly IBoardView _view;
         private readonly BlockSpawnerConfig _config;
@@ -81,6 +89,7 @@ namespace GamePlay.BlockSpawners.Runtime
                 }
 
                 _factory.CreateMoving(_lifetime, tile, value);
+                _gameSaver.ForceSave(_scanner.GetState());
                 return;
             }
         }

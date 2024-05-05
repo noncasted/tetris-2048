@@ -1,15 +1,19 @@
 {
     "name": "Global.Localization.Abstract",
+    "rootNamespace": "",
     "references": [
-        "GUID:7347c5f7bb3f4b8b84942d18625079ec"
+        "GUID:7347c5f7bb3f4b8b84942d18625079ec",
+        "GUID:dc9bba1195174e92a87bca1995d0eebf",
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:1429db28f9474a389cb34ec712b3c8b3"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "precompiledReferences": [],
-    "defineConstraints": [],
-    "versionDefines": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
+    "precompiledReferences": [],
     "autoReferenced": false,
-    "noEngineReferences": true
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

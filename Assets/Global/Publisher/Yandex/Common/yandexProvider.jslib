@@ -1,11 +1,15 @@
 ﻿mergeInto(
     LibraryManager.library,
     {
+        InitializeYandexSDK: function() {
+            Initialize();  
+        },
+        
         Review: function () {
-            ysdk.feedback.canReview()
+            _ysdk.feedback.canReview()
                 .then(({value, reason}) => {
                     if (value) {
-                        ysdk.feedback.requestReview()
+                        _ysdk.feedback.requestReview()
                             .then(({feedbackSent}) => {
                                 console.log(feedbackSent);
                                 SendCallback("OnReview");
@@ -54,7 +58,7 @@
         },
 
         GetLang: function () {
-            const lang = ysdk.environment.i18n.lang;
+            const lang = _ysdk.environment.i18n.lang;
             const bufferSize = lengthBytesUTF8(lang) + 1;
             const buffer = _malloc(bufferSize);
             stringToUTF8(lang, buffer, bufferSize);
@@ -62,7 +66,7 @@
         },
 
         ShowFullscreenAd: function () {
-            ysdk.adv.showFullscreenAdv({
+            _ysdk.adv.showFullscreenAdv({
                 callbacks: {
                     onClose: function (wasShown) {
                         SendCallback("OnInterstitialShown");
@@ -75,7 +79,7 @@
         },
 
         ShowRewardedAd: function () {
-            ysdk.adv.showRewardedVideo({
+            _ysdk.adv.showRewardedVideo({
                 callbacks: {
                     onOpen: () => {
                         console.log('Video ad open.');

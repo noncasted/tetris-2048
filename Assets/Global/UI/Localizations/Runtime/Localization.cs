@@ -41,7 +41,7 @@ namespace Global.UI.Localizations.Runtime
             var datas = _storage.GetDatas();
 
             foreach (var data in datas)
-                data.SelectLanguage(_language);
+                data.SetLanguage(_language);
         }
 
         public void Set(Language language)
@@ -57,7 +57,7 @@ namespace Global.UI.Localizations.Runtime
             var datas = _storage.GetDatas();
 
             foreach (var data in datas)
-                data.SelectLanguage(_language);
+                data.SetLanguage(_language);
         }
 
         public Language GetNext(Language language)

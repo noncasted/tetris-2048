@@ -43,6 +43,7 @@ namespace Global.Publisher.Yandex
             yandexCallbacks.name = "YandexCallbacks";
 
             services.RegisterComponent(yandexCallbacks);
+
             RegisterModules(services);
 
             var options = utils.Options.GetOptions<PlatformOptions>();
@@ -50,6 +51,9 @@ namespace Global.Publisher.Yandex
             if (options.IsEditor == true)
                 return RegisterEditorApis(services, utils.SceneLoader, yandexCallbacks);
             
+            services.Register<YandexInitialization>()
+                .AsCallbackListener();
+
             RegisterBuildApis(services);
 
             return UniTask.CompletedTask;

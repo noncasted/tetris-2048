@@ -31,23 +31,23 @@ namespace Global.Publisher.Yandex.DataStorages
         public async UniTask OnAwakeAsync()
         {
             var completion = new UniTaskCompletionSource<string>();
-
+            
             _callbacks.UserDataReceived += OnDataReceived;
-
+            
             await UniTask.WaitUntil(() => _callbacks.IsInitialized == true);
             
             _api.Get_Internal();
             var data = await completion.Task;
-
+            
             _callbacks.UserDataReceived -= OnDataReceived;
             
             var rawEntries = JsonConvert.DeserializeObject<Dictionary<string, string>>(data);
-
+            
             foreach (var (key, rawData) in rawEntries)
                 _keyToSerializer[key].Deserialize(rawData);
-
+            
             return;
-
+            
             void OnDataReceived(string raw)
             {
                 completion.TrySetResult(raw);

@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using Common.Components.Runtime.ObjectLifetime;
+using Global.UI.Localizations.Abstract;
+using TMPro;
 using UnityEngine;
 
 namespace Global.UI.Localizations.Texts
@@ -7,7 +9,7 @@ namespace Global.UI.Localizations.Texts
     [RequireComponent(typeof(TMP_Text))]
     public class LocalizedText : MonoBehaviour
     {
-        [SerializeField] private LanguageTextData _data;
+        [SerializeField] private LocalizationEntry _data;
 
         private TMP_Text _text;
 
@@ -15,12 +17,8 @@ namespace Global.UI.Localizations.Texts
         {
             _text = GetComponent<TMP_Text>();
 
-            _data.AddCallback(OnLanguageChanged);
-        }
-
-        private void OnDestroy()
-        {
-            _data.RemoveCallback(OnLanguageChanged);
+            var lifetime = this.GetObjectLifetime();
+            _data.Text.View(lifetime, (_, text) => OnLanguageChanged(text));
         }
 
         private void OnLanguageChanged(string text)

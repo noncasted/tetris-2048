@@ -1,7 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using Common.DataTypes.Runtime.Attributes;
+using Common.DataTypes.Runtime.Reactive;
+using Global.UI.Localizations.Abstract;
 using Global.UI.Localizations.Definition;
+using Internal.Scopes.Abstract.Options;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,52 +11,33 @@ namespace Global.UI.Localizations.Texts
 {
     [InlineEditor]
     [CreateAssetMenu(fileName = "LanguageText", menuName = "UI/Localization/Text")]
-    public class LanguageTextData : ScriptableObject
+    public class LanguageTextData : LocalizationEntry
     {
-        [SerializeField] [NestedScriptableObjectField] [Indent] private LanguageEntry _ru;
+        [SerializeField] [NestedScriptableObjectField] [Indent]
+        private LanguageEntry _eng;
 
-        [SerializeField] [NestedScriptableObjectField] [Indent] private LanguageEntry _eng;
-
-        private Language _selected;
-        private bool _isInitialized;
-        private readonly HashSet<Action<string>> _localizeCallback = new();
-
-        public void AddCallback(Action<string> localizeCallback)
-        {
-            _localizeCallback.Add(localizeCallback);
-
-            if (_isInitialized == true)
-                InvokeCallback();
-        }
+        [SerializeField] [NestedScriptableObjectField] [Indent]
+        private LanguageEntry _ru;
         
-        public void RemoveCallback(Action<string> localizeCallback)
+        private readonly ViewableProperty<string> _text = new();
+
+        public override IViewableProperty<string> Text => _text;
+        
+        public override void Construct(IOptions options)
         {
-            _localizeCallback.Remove(localizeCallback);
+            SetLanguage(Language.Eng);
         }
 
-        public void SelectLanguage(Language language)
+        public override void SetLanguage(Language language)
         {
-            _selected = language;
-            _isInitialized = true;
-            InvokeCallback();
-        }
-
-        public string GetText()
-        {
-            return _selected switch
+            var text = language switch
             {
                 Language.Ru => _ru.Text,
                 Language.Eng => _eng.Text,
                 _ => throw new ArgumentOutOfRangeException()
             };
-        }
 
-        private void InvokeCallback()
-        {
-            var text = GetText();
-            
-            foreach (var callback in _localizeCallback)
-                callback?.Invoke(text);
+            _text.Set(text);
         }
     }
 }
