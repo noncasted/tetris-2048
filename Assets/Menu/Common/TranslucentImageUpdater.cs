@@ -48,7 +48,7 @@ namespace Menu.Common
             _progressTime += Time.deltaTime * _direction;
 
             var progress = _progressTime / _time;
-            _config.Strength = progress * _strength;
+          _config.Strength = progress * _strength;
             
             if ((_direction == 1 && progress < 1f) || (_direction == -1 && progress > 0f))
                 return;

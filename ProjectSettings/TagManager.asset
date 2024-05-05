@@ -38,18 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2585954233
-    locked: 0
-  - name: Board
-    uniqueID: 2690164189
-    locked: 0
-  - name: Blocks
-    uniqueID: 2557953231
-    locked: 0
-  - name: UI
-    uniqueID: 2870678349
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2875546695
+    locked: 0
+  - name: Tiles
+    uniqueID: 3560624585
+    locked: 0
+  - name: Blocks
+    uniqueID: 458048601
+    locked: 0
+  - name: UI
+    uniqueID: 3295661197
     locked: 0

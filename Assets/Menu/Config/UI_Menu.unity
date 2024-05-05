@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 10
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -44,6 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,6 +67,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -448,8 +452,8 @@ GameObject:
   m_Component:
   - component: {fileID: 505193016}
   - component: {fileID: 505193018}
-  - component: {fileID: 505193017}
   - component: {fileID: 505193019}
+  - component: {fileID: 505193020}
   m_Layer: 5
   m_Name: Translucent Image
   m_TagString: Untagged
@@ -476,7 +480,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &505193017
+--- !u!222 &505193018
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505193015}
+  m_CullTransparentMesh: 1
+--- !u!114 &505193019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505193015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ae7fefc5504718ab1ab4239c3c2974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 505193020}
+  _config: {fileID: 11400000, guid: aa525d393fcfb264cb81b3b07f85c049, type: 2}
+  _strength: 30
+  _time: 0.25
+--- !u!114 &505193020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -511,30 +539,6 @@ MonoBehaviour:
   brightness: 0
   flatten: 0.15
   m_spriteBlending: 0
---- !u!222 &505193018
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505193015}
-  m_CullTransparentMesh: 1
---- !u!114 &505193019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505193015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ae7fefc5504718ab1ab4239c3c2974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _image: {fileID: 505193017}
-  _config: {fileID: 11400000, guid: 69c0b043f5fbad145968b75eb6b8d463, type: 2}
-  _strength: 30
-  _time: 0.25
 --- !u!1001 &568002802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2263,7 +2267,7 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1586436304028595205, guid: d01e2a7133aec104094170e3f5e640fe, type: 3}
-      propertyPath: '_behaviours.Array.data[2]'
+      propertyPath: _behaviours.Array.data[2]
       value: 
       objectReference: {fileID: 968085955}
     - target: {fileID: 1821254514665504903, guid: d01e2a7133aec104094170e3f5e640fe, type: 3}

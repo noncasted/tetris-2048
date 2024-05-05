@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 10
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -44,6 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,6 +67,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -481,9 +485,9 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 27
+  m_AdditionalShaderChannelsFlag: 31
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1424288947
+  m_SortingLayerID: -999306099
   m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &92578035
@@ -704,7 +708,7 @@ GameObject:
   - component: {fileID: 154811691}
   - component: {fileID: 154811690}
   m_Layer: 5
-  m_Name: 'Spline UI Renderer - EndImage[0]'
+  m_Name: Spline UI Renderer - EndImage[0]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +781,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2108081525866254977, guid: f471030f48f7fd74496e2eba05a990dd, type: 3}
       propertyPath: m_Color.a
-      value: 0.77254903
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 2327823192020510222, guid: f471030f48f7fd74496e2eba05a990dd, type: 3}
       propertyPath: m_Name
@@ -2146,9 +2150,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -431.99966}
-  m_SizeDelta: {x: 384.3484, y: 15.105499}
-  m_Pivot: {x: 0.47555515, y: 0.50720185}
+  m_AnchoredPosition: {x: -24.999964, y: -431.99966}
+  m_SizeDelta: {x: 384.34854, y: 15.105527}
+  m_Pivot: {x: 0.47555518, y: 0.50720304}
 --- !u!114 &1121927724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2729,7 +2733,7 @@ GameObject:
   - component: {fileID: 1153282324}
   - component: {fileID: 1153282323}
   m_Layer: 5
-  m_Name: 'Spline UI Renderer - EndImage[0]'
+  m_Name: Spline UI Renderer - EndImage[0]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2742,7 +2746,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153282321}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7055051, w: 0.70870495}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70550513, w: 0.7087049}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
@@ -2751,7 +2755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -110.5, y: 0.50002646}
+  m_AnchoredPosition: {x: -110.50003, y: 0.5000446}
   m_SizeDelta: {x: 51.5, y: 51.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153282323
@@ -3741,15 +3745,30 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 569649493632598810, guid: 8efce7b340c46334bafa15d411b89033, type: 3}
       propertyPath: m_text
-      value: Use WASD or arrows to move block to the left
+      value: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435
+        WASD \u0438\u043B\u0438 \u0441\u0442\u0440\u0435\u043B\u043E\u0447\u043A\u0438,
+        \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u043D\u0443\u0442\u044C
+        \u0431\u043B\u043E\u043A \u0432\u043B\u0435\u0432\u043E"
       objectReference: {fileID: 0}
     - target: {fileID: 569649493632598810, guid: 8efce7b340c46334bafa15d411b89033, type: 3}
       propertyPath: m_fontSize
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 569649493632598810, guid: 8efce7b340c46334bafa15d411b89033, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9508b8d7f4d87f348a37066707917a1d, type: 2}
+    - target: {fileID: 569649493632598810, guid: 8efce7b340c46334bafa15d411b89033, type: 3}
       propertyPath: m_fontSizeBase
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 569649493632598810, guid: 8efce7b340c46334bafa15d411b89033, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7649494102968735635, guid: 9508b8d7f4d87f348a37066707917a1d, type: 2}
+    - target: {fileID: 569649493632598810, guid: 8efce7b340c46334bafa15d411b89033, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1170604034518765821, guid: 8efce7b340c46334bafa15d411b89033, type: 3}
       propertyPath: m_Name
