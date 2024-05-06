@@ -1,5 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
-using Global.Publisher.Yandex.Debugs.Ads;
+﻿using Global.Publisher.Yandex.Debugs.Ads;
 
 namespace Global.Publisher.Yandex.Advertisement
 {

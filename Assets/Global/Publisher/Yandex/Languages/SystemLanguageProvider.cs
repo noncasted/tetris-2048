@@ -1,5 +1,4 @@
 ﻿using Global.Publisher.Abstract.Languages;
-using Global.UI.Localizations.Definition;
 
 namespace Global.Publisher.Yandex.Languages
 {

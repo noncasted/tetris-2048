@@ -1,4 +1,4 @@
-﻿namespace Global.UI.Localizations.Definition
+﻿namespace Global.Publisher.Abstract.Languages
 {
     public enum Language
     {

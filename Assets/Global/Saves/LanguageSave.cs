@@ -1,6 +1,6 @@
 ﻿using System;
 using Global.Publisher.Abstract.DataStorages;
-using Global.UI.Localizations.Definition;
+using Global.Publisher.Abstract.Languages;
 
 namespace Global.Saves
 {

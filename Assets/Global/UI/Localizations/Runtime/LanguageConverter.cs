@@ -1,5 +1,5 @@
 ﻿using System;
-using Global.UI.Localizations.Definition;
+using Global.Publisher.Abstract.Languages;
 
 namespace Global.UI.Localizations.Runtime
 {

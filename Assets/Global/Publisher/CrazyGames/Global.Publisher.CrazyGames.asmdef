@@ -1,0 +1,27 @@
+{
+    "name": "Global.Publisher.CrazyGames",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1429db28f9474a389cb34ec712b3c8b3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:dc9bba1195174e92a87bca1995d0eebf",
+        "GUID:fa1a376842d04ed88314b368023b90b4",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:ef403b25d3e8417e9854f4cfbbe7bc43",
+        "GUID:3b992c16a4c84e929d722c6b7d0ed004",
+        "GUID:10fe20dd1bd946259b6ea4fd3965b06e",
+        "GUID:9df4a13082192ce46940fac8da7ce588",
+        "GUID:47b5752185ff436fa116dfaa3b0957be",
+        "GUID:cd50199a6a164b788188f55241809f95",
+        "GUID:6e0a6c32d910f754cbe5bc930d7c9d45"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

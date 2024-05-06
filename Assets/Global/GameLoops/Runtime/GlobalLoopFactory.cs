@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
+using Features.Loop.Setup;
 using Internal.Scopes.Abstract.Containers;
 using Internal.Scopes.Abstract.Instances.Services;
-using Loop.Setup;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

@@ -1,5 +1,5 @@
 ﻿using Common.DataTypes.Runtime.Reactive;
-using Global.UI.Localizations.Definition;
+using Global.Publisher.Abstract.Languages;
 using Internal.Scopes.Abstract.Options;
 using UnityEngine;
 

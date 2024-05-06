@@ -1,8 +1,8 @@
 ﻿using System;
 using Common.DataTypes.Runtime.Attributes;
 using Common.DataTypes.Runtime.Reactive;
+using Global.Publisher.Abstract.Languages;
 using Global.UI.Localizations.Abstract;
-using Global.UI.Localizations.Definition;
 using Internal.Scopes.Abstract.Options;
 using Internal.Services.Options.Implementations;
 using Sirenix.OdinInspector;

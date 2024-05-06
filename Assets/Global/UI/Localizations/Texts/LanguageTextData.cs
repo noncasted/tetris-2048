@@ -1,8 +1,8 @@
 ﻿using System;
 using Common.DataTypes.Runtime.Attributes;
 using Common.DataTypes.Runtime.Reactive;
+using Global.Publisher.Abstract.Languages;
 using Global.UI.Localizations.Abstract;
-using Global.UI.Localizations.Definition;
 using Internal.Scopes.Abstract.Options;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -18,11 +18,11 @@ namespace Global.UI.Localizations.Texts
 
         [SerializeField] [NestedScriptableObjectField] [Indent]
         private LanguageEntry _ru;
-        
+
         private readonly ViewableProperty<string> _text = new();
 
         public override IViewableProperty<string> Text => _text;
-        
+
         public override void Construct(IOptions options)
         {
             SetLanguage(Language.Eng);
@@ -30,14 +30,21 @@ namespace Global.UI.Localizations.Texts
 
         public override void SetLanguage(Language language)
         {
-            var text = language switch
+            try
             {
-                Language.Ru => _ru.Text,
-                Language.Eng => _eng.Text,
-                _ => throw new ArgumentOutOfRangeException()
-            };
+                var text = language switch
+                {
+                    Language.Ru => _ru.Text,
+                    Language.Eng => _eng.Text,
+                    _ => throw new ArgumentOutOfRangeException()
+                };
 
-            _text.Set(text);
+                _text.Set(text);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Exception: {e} in text data: {name}");
+            }
         }
     }
 }

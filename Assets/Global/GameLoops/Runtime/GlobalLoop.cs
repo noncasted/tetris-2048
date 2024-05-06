@@ -1,11 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
+using Features.Loop.Setup;
 using Global.Cameras.CurrentProvider.Abstract;
 using Global.Cameras.Persistent.Abstract;
 using Global.System.ScopeDisposer.Abstract;
 using Global.UI.LoadingScreens.Abstract;
 using Internal.Scopes.Abstract.Instances.Services;
 using Internal.Scopes.Abstract.Scenes;
-using Loop.Setup;
 using VContainer.Unity;
 
 namespace Global.GameLoops.Runtime

@@ -12,9 +12,9 @@ namespace Global.Publisher.Itch.Language
         private readonly IItchLanguageAPI _externAPI;
 
         private bool _isLanguageReceived;
-        private UI.Localizations.Definition.Language _selected;
+        private Abstract.Languages.Language _selected;
 
-        public UI.Localizations.Definition.Language GetLanguage()
+        public Abstract.Languages.Language GetLanguage()
         {
             if (_isLanguageReceived == true)
                 return _selected;
@@ -24,9 +24,9 @@ namespace Global.Publisher.Itch.Language
 
             return raw switch
             {
-                "ru" => UI.Localizations.Definition.Language.Ru,
-                "en" => UI.Localizations.Definition.Language.Eng,
-                _ => UI.Localizations.Definition.Language.Ru
+                "ru" => Abstract.Languages.Language.Ru,
+                "en" => Abstract.Languages.Language.Eng,
+                _ => Abstract.Languages.Language.Ru
             };
         }
     }

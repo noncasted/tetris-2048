@@ -2,7 +2,6 @@
 using Global.Inputs.Constraints.Abstract;
 using Global.UI.StateMachines.Abstract;
 using Internal.Scopes.Abstract.Lifetimes;
-using UnityEngine;
 
 namespace Global.UI.StateMachines.Runtime
 {

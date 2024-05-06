@@ -1,6 +1,7 @@
 ﻿using System;
 using Common.DataTypes.Runtime.Attributes;
 using Cysharp.Threading.Tasks;
+using Global.Publisher.CrazyGames;
 using Global.Publisher.Itch;
 using Global.Publisher.Yandex;
 using Internal.Scopes.Abstract.Containers;
@@ -17,6 +18,7 @@ namespace Global.Publisher.Setup
     {
         [SerializeField] [CreateSO] private ItchSetup _itch;
         [SerializeField] [CreateSO] private YandexSetup _yandex;
+        [SerializeField] [CreateSO] private CrazyGamesSetup _crazyGames;
         
         public UniTask Create(IServiceCollection services, IServiceScopeUtils utils)
         {
@@ -32,6 +34,8 @@ namespace Global.Publisher.Setup
                     break;
                 case PlatformType.Android:
                     break;
+                case PlatformType.CrazyGames:
+                    return _crazyGames.Create(services, utils);
                 default:
                     throw new ArgumentOutOfRangeException();
             }

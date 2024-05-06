@@ -4,7 +4,6 @@ using Global.Publisher.Abstract.DataStorages;
 using Global.Publisher.Abstract.Languages;
 using Global.Saves;
 using Global.UI.Localizations.Abstract;
-using Global.UI.Localizations.Definition;
 using Internal.Scopes.Abstract.Instances.Services;
 
 namespace Global.UI.Localizations.Runtime

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itch: {fileID: 11400000, guid: 1960f37341355984e9aeb51a89c1d465, type: 2}
   _yandex: {fileID: 11400000, guid: e6f74e9a77cf96644a9adec1fb4ed1cf, type: 2}
+  _crazyGames: {fileID: 11400000, guid: af2b95a35eae0bb4ab9114c130f71f8e, type: 2}

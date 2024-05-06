@@ -30,12 +30,9 @@ EditorBuildSettings:
     path: Assets/GamePlay/Overlay/Config/UI_Overlay.unity
     guid: d4e2afc4616ec094abb37e23573db548
   - enabled: 1
-    path: Assets/Tutorial/Config/Tutorial_UI.unity
+    path: Assets/Tutorial/Config/UI_Tutorial.unity
     guid: edcf0026258d70f4991a15e38f0f8b81
   - enabled: 1
     path: Assets/Global/Publisher/Yandex/Config/Yandex_Debug.unity
     guid: 8c346e04f015a744194c0196db34f1e2
-  - enabled: 0
-    path: Assets/Test.unity
-    guid: c8a59a1b1707c234b975142aeb375e71
   m_configObjects: {}
