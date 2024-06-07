@@ -17,7 +17,7 @@ namespace Features.Tutorial.Runtime.Steps.SpeedModifications
 
         public UniTask Handle(IReadOnlyLifetime stepLifetime)
         {
-            _ui.SetPlatform(_platformOptions);
+            _ui.OnEntered(_platformOptions, stepLifetime);
             _ui.Enter(stepLifetime);
             var isClicked = false;
 

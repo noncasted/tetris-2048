@@ -312,6 +312,10 @@ namespace CrazyGames
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void OnRuntimeMethodLoad()
         {
+            #if !CRAZY_GAMES
+            return;
+            #endif
+            
             // When "Reload Domain" is disabled in Editor settings to improve startup speed,
             // static variables should be cleaned manually before every game start.
             IsInitialized = false;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Common.DataTypes.Runtime.Collections;
 using Global.System.MessageBrokers.Abstract;
 using Internal.Scopes.Abstract.Lifetimes;
 
@@ -43,7 +44,7 @@ namespace Global.System.MessageBrokers.Runtime
 
         private class Notifier<T> : INotifier
         {
-            private readonly HashSet<Action<T>> _listeners = new();
+            private readonly ModifiableList<Action<T>> _listeners = new();
 
             public void AddListener(object rawListener)
             {

@@ -39,16 +39,8 @@ namespace Features.Menu.Navigation.Runtime
         public void OnEntered(IStateHandle handle)
         {
             _canvasGroup.Show();
-            handle.VisibilityLifetime.ListenTerminate(() =>
-            {
-                _canvasGroup.Hide();
-                Debug.Log("Navigation visibility lifetime terminate");
-            });
-            
-            handle.StackLifetime.ListenTerminate(() =>
-            {
-                Debug.Log("Navigation stack lifetime terminate");
-            });
+            handle.VisibilityLifetime.ListenTerminate(_canvasGroup.Hide);
+
             _state.IsPaused.View(handle.VisibilityLifetime, isPaused =>
             {
                 if (isPaused == true)

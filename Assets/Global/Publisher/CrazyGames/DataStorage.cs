@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using CrazyGames;
 using Cysharp.Threading.Tasks;
 using Global.Publisher.Abstract.DataStorages;
-using Internal.Scopes.Abstract.Lifetimes;
+using Internal.Scopes.Abstract.Instances.Services;
 using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Global.Publisher.CrazyGames
 {
-    public class DataStorage : IDataStorage
+    public class DataStorage : IDataStorage, IScopeEnableAsyncListener
     {
         public DataStorage(IReadOnlyList<IStorageEntrySerializer> entries)
         {
@@ -24,16 +24,15 @@ namespace Global.Publisher.CrazyGames
         private readonly Dictionary<Type, IStorageEntrySerializer> _typeToSerializer = new();
         private readonly Dictionary<string, IStorageEntrySerializer> _keyToSerializer = new();
 
-        public void OnLifetimeCreated(ILifetime lifetime)
+        public UniTask OnEnabledAsync()
         {
-            if (PlayerPrefs.HasKey(Key) == true)
-            {
-                var raw = CrazySDK.Data.GetString(Key, string.Empty);
-                var rawEntries = JsonConvert.DeserializeObject<Dictionary<string, string>>(raw);
+            var raw = CrazySDK.Data.GetString(Key, string.Empty);
+            var rawEntries = JsonConvert.DeserializeObject<Dictionary<string, string>>(raw);
 
-                foreach (var (key, rawData) in rawEntries)
-                    _keyToSerializer[key].Deserialize(rawData);
-            }
+            foreach (var (key, rawData) in rawEntries)
+                _keyToSerializer[key].Deserialize(rawData);
+
+            return UniTask.CompletedTask;
         }
 
         public UniTask<T> GetEntry<T>() where T : class
@@ -48,7 +47,7 @@ namespace Global.Publisher.CrazyGames
         {
             var type = typeof(T);
             _typeToSerializer[type].Set(data);
-            
+
             var save = new Dictionary<string, string>();
 
             foreach (var (key, entry) in _keyToSerializer)

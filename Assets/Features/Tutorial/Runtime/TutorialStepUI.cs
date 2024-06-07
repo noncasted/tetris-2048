@@ -12,6 +12,7 @@ namespace Features.Tutorial.Runtime
         {
             gameObject.SetActive(true);
             _canvasGroup.Show();
+            
             stepLifetime.ListenTerminate(() =>
             {
                 _canvasGroup.Hide();

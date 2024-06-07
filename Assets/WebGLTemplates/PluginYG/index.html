@@ -130,6 +130,8 @@
     const script = document.createElement("script");
     script.src = loaderUrl;
     
+    console.log("Load unity instance");
+    
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
             spinner.style.display = "none";

@@ -1,0 +1,36 @@
+<linker>
+
+    <assembly fullname="GamePlay.BlockSpawner.Abstract" preserve="all" />
+    <assembly fullname="GamePlay.BlockSpawner.Runtime" preserve="all" />
+    <assembly fullname="GamePlay.Board.Abstract" preserve="all" />
+    <assembly fullname="GamePlay.Board.Runtime" preserve="all" />
+    <assembly fullname="GamePlay.Input.Abstract" preserve="all" />
+    <assembly fullname="GamePlay.Input.Runtime" preserve="all" />
+    <assembly fullname="GamePlay.Loop.Abstract" preserve="all" />
+    <assembly fullname="GamePlay.Loop.Runtime" preserve="all" />
+    <assembly fullname="GamePlay.Overlay.Runtime" preserve="all" />
+    <assembly fullname="GamePlay.Save.Abstract" preserve="all" />
+    <assembly fullname="GamePlay.Save.Runtime" preserve="all" />
+    <assembly fullname="GamePlay.Score.Abstract" preserve="all" />
+    <assembly fullname="GamePlay.Score.Runtime" preserve="all" />
+    <assembly fullname="Loop.Abstract" preserve="all" />
+    <assembly fullname="Loop.Mock" preserve="all" />
+    <assembly fullname="Loop.Runtime" preserve="all" />
+    <assembly fullname="Loop.Setup" preserve="all" />
+    <assembly fullname="Loop.Sounds.Abstract" preserve="all" />
+    <assembly fullname="Loop.Sounds.Runtime" preserve="all" />
+    <assembly fullname="Menu.About.Abstract" preserve="all" />
+    <assembly fullname="Menu.About.Runtime" preserve="all" />
+    <assembly fullname="Menu.Common" preserve="all" />
+    <assembly fullname="Menu.GameEnd.Abstract" preserve="all" />
+    <assembly fullname="Menu.GameEnd.Runtime" preserve="all" />
+    <assembly fullname="Menu.Loop.Abstract" preserve="all" />
+    <assembly fullname="Menu.Loop.Runtime" preserve="all" />
+    <assembly fullname="Menu.Navigation.Abstract" preserve="all" />
+    <assembly fullname="Menu.Navigation.Runtime" preserve="all" />
+    <assembly fullname="Menu.Settings.Abstract" preserve="all" />
+    <assembly fullname="Menu.Settings.Common" preserve="all" />
+    <assembly fullname="Menu.Settings.Runtime" preserve="all" />
+    <assembly fullname="Tutorial.Runtime" preserve="all" />
+
+</linker>
