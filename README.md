@@ -1,7 +1,5 @@
 ### Tetris 2048
-
 2048 game combined with tetris falling mechanic
-
 Play: https://noncasted.itch.io/tetris-2048
 
-![ezgif-36056253bf64d9](https://github.com/user-attachments/assets/b6f4813d-fda7-4e71-930a-ce0ace3185c1)
+![tetris-gameplay](https://github.com/user-attachments/assets/6b450562-72e9-413c-8fdb-bc37122e717a)
